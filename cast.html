@@ -161,7 +161,7 @@
     <div class="cast-header">
       <div class="eyebrow">Avengers: Doomsday · Dec 18 2026</div>
       <h1>Confirmed Cast</h1>
-      <p>Every actor and character confirmed for Doomsday so far.</p>
+      <p>Every actor and character confirmed for Doomsday — 31 confirmed so far, including the full X-Men lineup.</p>
     </div>
 
     <div class="cast-filters" id="filters">
@@ -169,7 +169,7 @@
       <button class="filter-btn" onclick="filter('hero', this)">Heroes</button>
       <button class="filter-btn" onclick="filter('villain', this)">Villains</button>
       <button class="filter-btn" onclick="filter('antihero', this)">Anti-Heroes</button>
-      <button class="filter-btn" onclick="filter('new', this)">New</button>
+      <button class="filter-btn" onclick="filter('new', this)">New to MCU</button>
     </div>
 
     <div class="cast-count" id="cast-count"></div>
@@ -185,30 +185,42 @@
   injectParticles(15);
 
   const CAST = [
+    // Villain
     { character: 'Doctor Doom', actor: 'Robert Downey Jr.', type: 'villain', color: 'ic-red' },
-    { character: 'Captain America', actor: 'Anthony Mackie', type: 'hero', color: 'ic-blue' },
+    // Avengers / Heroes
     { character: 'Thor', actor: 'Chris Hemsworth', type: 'hero', color: 'ic-blue' },
+    { character: 'Captain America', actor: 'Anthony Mackie', type: 'hero', color: 'ic-blue' },
+    { character: 'Steve Rogers', actor: 'Chris Evans', type: 'hero', color: 'ic-blue' },
     { character: 'Black Panther', actor: 'Letitia Wright', type: 'hero', color: 'ic-purple' },
-    { character: 'Doctor Strange', actor: 'Benedict Cumberbatch', type: 'hero', color: 'ic-blue' },
-    { character: 'Scarlet Witch', actor: 'Elizabeth Olsen', type: 'antihero', color: 'ic-red' },
     { character: 'Ant-Man', actor: 'Paul Rudd', type: 'hero', color: 'ic-green' },
     { character: 'Shang-Chi', actor: 'Simu Liu', type: 'hero', color: 'ic-green' },
+    { character: 'Namor', actor: 'Tenoch Huerta', type: 'antihero', color: 'ic-blue' },
+    { character: 'Sentry', actor: 'Lewis Pullman', type: 'hero', color: 'ic-gold', new: true },
+    { character: 'Falcon', actor: 'Danny Ramirez', type: 'hero', color: 'ic-blue' },
+    { character: 'M\'Baku', actor: 'Winston Duke', type: 'hero', color: 'ic-green' },
+    { character: 'Okoye', actor: 'Danai Gurira', type: 'hero', color: 'ic-green' },
+    { character: 'Wong', actor: 'Benedict Wong', type: 'hero', color: 'ic-gold' },
+    { character: 'Ghost', actor: 'Hannah John-Kamen', type: 'antihero', color: 'ic-purple' },
     { character: 'Loki', actor: 'Tom Hiddleston', type: 'antihero', color: 'ic-gold' },
-    { character: 'Spider-Man', actor: 'Tom Holland', type: 'hero', color: 'ic-blue', new: false },
+    { character: 'Love', actor: 'India Rose Hemsworth', type: 'hero', color: 'ic-blue' },
+    // Fantastic Four
     { character: 'Mr. Fantastic', actor: 'Pedro Pascal', type: 'hero', color: 'ic-blue', new: true },
     { character: 'Invisible Woman', actor: 'Vanessa Kirby', type: 'hero', color: 'ic-blue', new: true },
-    { character: 'The Human Torch', actor: 'Joseph Quinn', type: 'hero', color: 'ic-red', new: true },
+    { character: 'Human Torch', actor: 'Joseph Quinn', type: 'hero', color: 'ic-red', new: true },
     { character: 'The Thing', actor: 'Ebon Moss-Bachrach', type: 'hero', color: 'ic-gold', new: true },
+    // Thunderbolts
     { character: 'Yelena Belova', actor: 'Florence Pugh', type: 'antihero', color: 'ic-purple' },
     { character: 'Bucky Barnes', actor: 'Sebastian Stan', type: 'antihero', color: 'ic-blue' },
     { character: 'Red Guardian', actor: 'David Harbour', type: 'antihero', color: 'ic-red' },
     { character: 'US Agent', actor: 'Wyatt Russell', type: 'antihero', color: 'ic-blue' },
+    // X-Men
     { character: 'Professor X', actor: 'Patrick Stewart', type: 'hero', color: 'ic-purple', new: true },
-    { character: 'Steve Rogers', actor: 'Chris Evans', type: 'hero', color: 'ic-blue' },
-    { character: 'Nick Fury', actor: 'Samuel L. Jackson', type: 'hero', color: 'ic-green' },
-    { character: 'Wong', actor: 'Benedict Wong', type: 'hero', color: 'ic-gold' },
-    { character: 'Okoye', actor: 'Danai Gurira', type: 'hero', color: 'ic-green' },
-    { character: 'Hope van Dyne', actor: 'Evangeline Lilly', type: 'hero', color: 'ic-purple' },
+    { character: 'Magneto', actor: 'Ian McKellen', type: 'antihero', color: 'ic-red', new: true },
+    { character: 'Beast', actor: 'Kelsey Grammer', type: 'hero', color: 'ic-blue', new: true },
+    { character: 'Cyclops', actor: 'James Marsden', type: 'hero', color: 'ic-red', new: true },
+    { character: 'Nightcrawler', actor: 'Alan Cumming', type: 'hero', color: 'ic-purple', new: true },
+    { character: 'Gambit', actor: 'Channing Tatum', type: 'antihero', color: 'ic-gold', new: true },
+    { character: 'Mystique', actor: 'Rebecca Romijn', type: 'antihero', color: 'ic-blue', new: true },
   ];
 
   const grid = document.getElementById('cast-grid');
