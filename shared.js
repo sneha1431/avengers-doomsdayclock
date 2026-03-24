@@ -2,6 +2,7 @@
 function injectNav(activePage) {
   const pages = [
     { href: 'index.html', label: 'Countdown' },
+    { href: 'news.html', label: 'News' },
     { href: 'will-return.html', label: 'Will Return' },
     { href: 'quiz.html', label: 'Which Avenger?' },
     { href: 'timeline.html', label: 'MCU Timeline' },
