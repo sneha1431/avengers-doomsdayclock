@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marvel Latest News & Updates — Avengers Doomsday</title>
+  <meta name="description" content="Latest Marvel news and updates — Avengers Doomsday cast announcements, trailers, release dates and more. Updated daily.">
+  <meta name="keywords" content="marvel news 2026, avengers doomsday news, mcu updates, marvel latest news, avengers doomsday updates">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://avengersdoomsdayclock.pages.dev/news.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://avengersdoomsdayclock.pages.dev/news.html">
+  <meta property="og:title" content="Marvel Latest News & Updates — Avengers Doomsday">
+  <meta property="og:description" content="Latest Marvel news and Avengers Doomsday updates. Cast announcements, trailers, release dates — updated daily.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Marvel Latest News — Avengers Doomsday">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .news-page {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    .news-header {
+      margin-bottom: 56px;
+    }
+
+    .news-header .eyebrow {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+
+    .news-header h1 {
+      font-family: var(--bebas);
+      font-size: clamp(40px, 10vw, 72px);
+      letter-spacing: 2px;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .news-header p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* TIMELINE */
+    .news-timeline {
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .news-timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 8px;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--red), transparent 90%);
+    }
+
+    /* SINGLE NEWS ITEM */
+    .news-item {
+      position: relative;
+      margin-bottom: 0;
+      padding-bottom: 40px;
+    }
+
+    .news-item::before {
+      content: '';
+      position: absolute;
+      left: -28px;
+      top: 8px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1px solid var(--red);
+      transition: background 0.2s;
+    }
+
+    .news-item:hover::before {
+      background: var(--red);
+    }
+
+    .news-item.featured::before {
+      background: var(--red);
+      box-shadow: 0 0 10px rgba(226,54,54,0.5);
+      width: 12px;
+      height: 12px;
+      left: -29px;
+      top: 7px;
+    }
+
+    .news-date {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .news-tag {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+
+    .tag-breaking { background: rgba(226,54,54,0.15); color: var(--red); border: 1px solid rgba(226,54,54,0.3); }
+    .tag-casting  { background: rgba(90,172,255,0.1); color: #5aacff; border: 1px solid rgba(90,172,255,0.2); }
+    .tag-trailer  { background: rgba(201,168,76,0.1); color: var(--gold); border: 1px solid rgba(201,168,76,0.2); }
+    .tag-update   { background: rgba(255,255,255,0.05); color: #888; border: 1px solid rgba(255,255,255,0.1); }
+    .tag-rumour   { background: rgba(160,100,220,0.1); color: #a064dc; border: 1px solid rgba(160,100,220,0.2); }
+    .tag-tv       { background: rgba(80,200,120,0.1); color: #50c878; border: 1px solid rgba(80,200,120,0.2); }
+
+    .news-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 20px 24px;
+      transition: border-color 0.2s;
+    }
+
+    .news-card:hover {
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    .news-item.featured .news-card {
+      border-color: rgba(226,54,54,0.3);
+    }
+
+    .news-headline {
+      font-family: var(--bebas);
+      font-size: 22px;
+      letter-spacing: 1px;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .news-body {
+      font-size: 14px;
+      color: #999;
+      line-height: 1.7;
+    }
+
+    .news-body a {
+      color: var(--red);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* EMPTY STATE */
+    .news-empty {
+      text-align: center;
+      padding: 64px 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <main class="news-page">
+    <div class="news-header">
+      <div class="eyebrow">Updated regularly</div>
+      <h1>Latest Marvel<br>News</h1>
+      <p>Cast announcements, trailers, release updates — everything happening in the MCU as we count down to Doomsday.</p>
+    </div>
+
+    <div class="news-timeline" id="news-timeline">
+
+      <!-- ============================================================
+           HOW TO ADD A NEWS ITEM:
+           Copy one of the blocks below, paste it at the TOP of this
+           list (newest first), update the date, headline, body, and tag.
+
+           TAG OPTIONS:
+             tag-breaking  = Breaking
+             tag-casting   = Casting
+             tag-trailer   = Trailer
+             tag-update    = Update
+             tag-rumour    = Rumour
+             tag-tv        = TV / Disney+
+
+           Add  class="featured"  to .news-item to highlight it in red.
+      ============================================================ -->
+
+      <!-- ITEM: Wonder Man Season 2 -->
+      <div class="news-item featured">
+        <div class="news-date">
+          March 24, 2026
+          <span class="news-tag tag-tv">TV / Disney+</span>
+        </div>
+        <div class="news-card">
+          <div class="news-headline">Marvel's Wonder Man Renewed for Season 2 on Disney+</div>
+          <div class="news-body">Yahya Abdul-Mateen II and Ben Kingsley will both return for Season 2. No premiere date has been announced yet.</div>
+        </div>
+      </div>
+
+      <!-- PASTE NEW ITEMS ABOVE THIS LINE -->
+
+    </div>
+  </main>
+</div>
+
+<script src="shared.js"></script>
+<script>
+  injectNav('news.html');
+  injectFooter();
+  injectParticles(15);
+</script>
+</body>
+</html>
