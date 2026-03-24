@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avengers: Doomsday Countdown — Days Until December 18, 2026</title>
+  <meta name="description" content="Live real-time countdown to Avengers: Doomsday. Track exactly how many days, hours, minutes and seconds until Doctor Doom arrives — December 18, 2026.">
+  <meta name="keywords" content="avengers doomsday countdown, days until avengers doomsday, avengers doomsday release date, december 18 2026, doctor doom mcu, avengers doomsday timer">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://avengersdoomsdayclock.pages.dev/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://avengersdoomsdayclock.pages.dev/">
+  <meta property="og:title" content="Avengers: Doomsday Countdown — Days Until December 18, 2026">
+  <meta property="og:description" content="Live real-time countdown to Avengers: Doomsday. Track exactly how many days, hours, minutes and seconds until Doctor Doom arrives.">
+  <meta property="og:site_name" content="Avengers Doomsday Countdown">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Avengers: Doomsday Countdown">
+  <meta name="twitter:description" content="Live countdown to Avengers: Doomsday — December 18, 2026. How many days until Doctor Doom arrives?">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Avengers Doomsday Countdown",
+    "url": "https://avengersdoomsdayclock.pages.dev/",
+    "description": "Live real-time countdown to Avengers: Doomsday releasing December 18, 2026.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://avengersdoomsdayclock.pages.dev/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Avengers: Doomsday",
+    "startDate": "2026-12-18",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Theaters Worldwide"
+    },
+    "description": "Avengers: Doomsday is the upcoming Marvel Studios film releasing December 18, 2026, directed by the Russo Brothers and featuring Robert Downey Jr. as Doctor Doom.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Marvel Studios"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 56px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px 80px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 10%, #2a0000 0%, #000 65%);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .studio-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.1s forwards;
+    }
+
+    .studio-badge-line { width: 48px; height: 1px; background: var(--red); }
+
+    .studio-badge span {
+      font-size: 11px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    .hero-title {
+      font-family: var(--bebas);
+      font-size: clamp(64px, 16vw, 160px);
+      line-height: 0.85;
+      letter-spacing: 3px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.25s forwards;
+    }
+
+    .hero-title .line2 { color: var(--red); }
+
+    .hero-date {
+      margin: 24px 0 48px;
+      font-size: 12px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.4s forwards;
+    }
+
+    .hero-date span { color: #aaa; }
+
+    /* TIMER */
+    .timer {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: clamp(6px, 2vw, 20px);
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.55s forwards;
+    }
+
+    .timer-unit { text-align: center; }
+
+    .timer-number {
+      font-family: var(--bebas);
+      font-size: clamp(64px, 15vw, 140px);
+      line-height: 1;
+      min-width: clamp(70px, 16vw, 160px);
+      color: #fff;
+      position: relative;
+      display: block;
+    }
+
+    .timer-number::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--red) 50%, transparent);
+      margin-top: -4px;
+    }
+
+    .timer-label {
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .timer-sep {
+      font-family: var(--bebas);
+      font-size: clamp(64px, 15vw, 140px);
+      color: var(--red);
+      opacity: 0.35;
+      line-height: 1;
+      padding-top: 0;
+    }
+
+    /* STATS ROW */
+    .stats-row {
+      display: flex;
+      gap: 0;
+      justify-content: center;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.7s forwards;
+    }
+
+    .stat-item {
+      padding: 0 28px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: var(--bebas);
+      font-size: 32px;
+      color: var(--red);
+      line-height: 1;
+    }
+
+    .stat-lbl {
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* TOOLS GRID */
+    .tools-section {
+      padding: 80px 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .tools-eyebrow {
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 40px;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .tool-card {
+      background: var(--bg);
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+
+    .tool-card:hover { background: var(--bg3); }
+
+    .tool-card-icon {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .tool-card-title {
+      font-family: var(--bebas);
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+
+    .tool-card-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .tool-card-arrow {
+      margin-top: auto;
+      padding-top: 16px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--red);
+      text-transform: uppercase;
+    }
+
+    /* DOOM RING */
+    .doom-ring-wrap {
+      margin: 0 auto 32px;
+      width: 80px;
+      height: 80px;
+      opacity: 0;
+      animation: fadeIn 1s ease 1.2s forwards;
+    }
+
+    .doom-ring {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 1px solid var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      animation: ringPulse 3s ease infinite;
+    }
+
+    .doom-ring::before {
+      content: '';
+      position: absolute;
+      inset: -10px;
+      border-radius: 50%;
+      border: 1px solid rgba(226,54,54,0.25);
+      animation: ringPulse 3s ease 1s infinite;
+    }
+
+    .doom-ring-letter {
+      font-family: var(--bebas);
+      font-size: 36px;
+      color: var(--red);
+    }
+
+    @keyframes ringPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.06); }
+    }
+
+    .will-return-text {
+      font-family: var(--bebas);
+      font-size: 13px;
+      letter-spacing: 6px;
+      color: var(--red);
+      text-align: center;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeIn 0.8s ease 1.4s forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .flip { animation: flipNum 0.2s ease; }
+    @keyframes flipNum {
+      0% { transform: scaleY(0.6); opacity: 0.4; }
+      100% { transform: scaleY(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="studio-badge">
+        <div class="studio-badge-line"></div>
+        <span>Marvel Studios</span>
+        <div class="studio-badge-line"></div>
+      </div>
+
+      <h1 class="hero-title">
+        <div>Avengers</div>
+        <div class="line2">Doomsday</div>
+      </h1>
+
+      <p class="hero-date">In theaters <span>December 18, 2026</span></p>
+
+      <div class="timer" id="timer">
+        <div class="timer-unit">
+          <span class="timer-number" id="days">000</span>
+          <div class="timer-label">Days</div>
+        </div>
+        <div class="timer-sep">:</div>
+        <div class="timer-unit">
+          <span class="timer-number" id="hours">00</span>
+          <div class="timer-label">Hours</div>
+        </div>
+        <div class="timer-sep">:</div>
+        <div class="timer-unit">
+          <span class="timer-number" id="minutes">00</span>
+          <div class="timer-label">Minutes</div>
+        </div>
+        <div class="timer-sep">:</div>
+        <div class="timer-unit">
+          <span class="timer-number" id="seconds">00</span>
+          <div class="timer-label">Seconds</div>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-num" id="stat-weeks">--</div>
+          <div class="stat-lbl">Weeks</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" id="stat-months">--</div>
+          <div class="stat-lbl">Months</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">RDJ</div>
+          <div class="stat-lbl">As Doom</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">Dec 18</div>
+          <div class="stat-lbl">Release</div>
+        </div>
+      </div>
+
+      <div class="doom-ring-wrap">
+        <div class="doom-ring">
+          <div class="doom-ring-letter">D</div>
+        </div>
+      </div>
+
+      <div class="will-return-text">Doctor Doom will return</div>
+    </div>
+  </section>
+
+  <!-- SEO CONTENT -->
+  <section style="max-width:800px;margin:0 auto;padding:0 24px 64px;">
+    <h2 style="font-family:var(--bebas);font-size:32px;letter-spacing:2px;color:#fff;margin-bottom:16px;">How Many Days Until Avengers: Doomsday?</h2>
+    <p style="font-size:15px;color:#888;line-height:1.8;margin-bottom:20px;">
+      The countdown above updates in real time, synced to UTC. Avengers: Doomsday hits theaters on <strong style="color:#ccc;">December 18, 2026</strong> — directed by the Russo Brothers and featuring Robert Downey Jr. returning to the MCU, this time as the iconic villain <strong style="color:#ccc;">Doctor Doom</strong>.
+    </p>
+    <p style="font-size:15px;color:#888;line-height:1.8;margin-bottom:20px;">
+      This is the first film in Marvel's Phase 6 Avengers lineup, picking up after the events of Thunderbolts*, Fantastic Four: First Steps, and Spider-Man: Brand New Day. The confirmed cast includes Anthony Mackie as Captain America, Chris Hemsworth as Thor, Benedict Cumberbatch as Doctor Strange, Pedro Pascal as Mr. Fantastic, and many more returning and new faces across the MCU.
+    </p>
+    <p style="font-size:15px;color:#888;line-height:1.8;">
+      While you wait, use our fan tools above — generate your own Marvel-style "Will Return" end credit card, take the Which Avenger Are You quiz, explore the full MCU timeline from Phase 1 to Phase 6, or browse the complete confirmed cast list for Doomsday.
+    </p>
+  </section>
+
+  <!-- TOOLS GRID -->
+  <section class="tools-section">
+    <div class="tools-eyebrow">Fan Tools</div>
+    <div class="tools-grid">
+      <a href="will-return.html" class="tool-card">
+        <div class="tool-card-icon">🎬</div>
+        <div class="tool-card-title">Will Return Generator</div>
+        <div class="tool-card-desc">Create your own Marvel-style end credit card. Who will return in Doomsday?</div>
+        <div class="tool-card-arrow">Try it →</div>
+      </a>
+      <a href="quiz.html" class="tool-card">
+        <div class="tool-card-icon">⚡</div>
+        <div class="tool-card-title">Which Avenger?</div>
+        <div class="tool-card-desc">Take the quiz and find out which hero (or villain) you truly are.</div>
+        <div class="tool-card-arrow">Take quiz →</div>
+      </a>
+      <a href="timeline.html" class="tool-card">
+        <div class="tool-card-icon">📅</div>
+        <div class="tool-card-title">MCU Timeline</div>
+        <div class="tool-card-desc">Every Phase 1–6 film mapped out. Where does Doomsday fit in?</div>
+        <div class="tool-card-arrow">Explore →</div>
+      </a>
+      <a href="cast.html" class="tool-card">
+        <div class="tool-card-icon">🦸</div>
+        <div class="tool-card-title">Confirmed Cast</div>
+        <div class="tool-card-desc">Everyone confirmed for Avengers: Doomsday — heroes, villains, and surprises.</div>
+        <div class="tool-card-arrow">View cast →</div>
+      </a>
+    </div>
+  </section>
+</div>
+
+<script src="shared.js"></script>
+<script>
+  injectNav('index.html');
+  injectFooter();
+  injectParticles(30);
+
+  const TARGET = new Date('2026-12-18T00:00:00Z');
+  const els = {
+    days: document.getElementById('days'),
+    hours: document.getElementById('hours'),
+    minutes: document.getElementById('minutes'),
+    seconds: document.getElementById('seconds'),
+    weeks: document.getElementById('stat-weeks'),
+    months: document.getElementById('stat-months'),
+  };
+  let prev = {};
+
+  function pad(n, len) { return String(n).padStart(len, '0'); }
+
+  function setEl(el, val, len) {
+    const s = pad(val, len);
+    if (prev[el.id] !== s) {
+      el.textContent = s;
+      el.classList.remove('flip');
+      void el.offsetWidth;
+      el.classList.add('flip');
+      prev[el.id] = s;
+    }
+  }
+
+  function tick() {
+    const diff = TARGET - Date.now();
+    if (diff <= 0) return;
+    const totalSec = Math.floor(diff / 1000);
+    const d = Math.floor(totalSec / 86400);
+    const h = Math.floor((totalSec % 86400) / 3600);
+    const m = Math.floor((totalSec % 3600) / 60);
+    const s = totalSec % 60;
+    setEl(els.days, d, 3);
+    setEl(els.hours, h, 2);
+    setEl(els.minutes, m, 2);
+    setEl(els.seconds, s, 2);
+    const w = Math.floor(d / 7);
+    const mo = Math.floor(d / 30);
+    if (prev.w !== w) { els.weeks.textContent = w; prev.w = w; }
+    if (prev.mo !== mo) { els.months.textContent = mo; prev.mo = mo; }
+  }
+
+  tick();
+  setInterval(tick, 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Which Avenger Are You? Quiz 2026 — Avengers Doomsday</title>
+  <meta name="description" content="Take the quiz and find out which Avenger you are before Avengers Doomsday. Iron Man, Thor, Captain America, Spider-Man and more.">
+  <meta name="keywords" content="which avenger are you, avengers quiz 2026, avengers doomsday quiz, what avenger am i, mcu personality quiz">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://avengersdoomsdayclock.pages.dev/quiz.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://avengersdoomsdayclock.pages.dev/quiz.html">
+  <meta property="og:title" content="Which Avenger Are You? Quiz 2026">
+  <meta property="og:description" content="Find out which Avenger you are — Iron Man, Thor, Cap, Strange, Black Widow and more. Free personality quiz.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Which Avenger Are You? — Doomsday Quiz">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Quiz","name":"Which Avenger Are You?","url":"https://avengersdoomsdayclock.pages.dev/quiz.html","description":"Find out which Avenger you are before Avengers Doomsday releases December 18 2026."}</script>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .quiz-page {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    .quiz-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .quiz-header .eyebrow {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+
+    .quiz-header h1 {
+      font-family: var(--bebas);
+      font-size: clamp(40px, 10vw, 72px);
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    /* PROGRESS */
+    .quiz-progress {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 40px;
+    }
+
+    .progress-dot {
+      flex: 1;
+      height: 2px;
+      background: var(--border);
+      transition: background 0.3s;
+    }
+
+    .progress-dot.done { background: var(--red); }
+    .progress-dot.active { background: #fff; }
+
+    /* QUESTION CARD */
+    .question-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+
+    .q-number {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .q-text {
+      font-family: var(--bebas);
+      font-size: 28px;
+      letter-spacing: 1px;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 28px;
+    }
+
+    .answers {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .answer-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #ccc;
+      font-family: var(--sans);
+      font-size: 14px;
+      padding: 14px 18px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s;
+      border-radius: 2px;
+      line-height: 1.4;
+    }
+
+    .answer-btn:hover {
+      border-color: var(--red);
+      color: #fff;
+      background: rgba(226,54,54,0.06);
+    }
+
+    .answer-btn.selected {
+      border-color: var(--red);
+      background: rgba(226,54,54,0.12);
+      color: #fff;
+    }
+
+    /* RESULT */
+    .result-card {
+      display: none;
+      text-align: center;
+      padding: 48px 32px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+    }
+
+    .result-card.visible { display: block; }
+
+    .result-icon {
+      font-size: 64px;
+      margin-bottom: 24px;
+      animation: bounce 0.6s ease;
+    }
+
+    @keyframes bounce {
+      0% { transform: scale(0); }
+      60% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    .result-you-are {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .result-name {
+      font-family: var(--bebas);
+      font-size: clamp(48px, 12vw, 80px);
+      color: var(--red);
+      letter-spacing: 3px;
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    .result-desc {
+      font-size: 15px;
+      color: #aaa;
+      line-height: 1.7;
+      max-width: 440px;
+      margin: 0 auto 32px;
+    }
+
+    .result-trait {
+      display: inline-block;
+      padding: 5px 14px;
+      border: 1px solid rgba(255,255,255,0.1);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-radius: 2px;
+      margin: 4px;
+    }
+
+    .result-actions {
+      margin-top: 32px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <main class="quiz-page">
+    <div class="quiz-header">
+      <div class="eyebrow">Before Doomsday</div>
+      <h1>Which<br>Avenger<br>Are You?</h1>
+    </div>
+
+    <div class="quiz-progress" id="progress"></div>
+
+    <div id="quiz-container">
+      <div class="question-card" id="question-card">
+        <div class="q-number" id="q-number"></div>
+        <div class="q-text" id="q-text"></div>
+        <div class="answers" id="answers"></div>
+      </div>
+    </div>
+
+    <div class="result-card" id="result-card">
+      <div class="result-icon" id="result-icon"></div>
+      <div class="result-you-are">You are</div>
+      <div class="result-name" id="result-name"></div>
+      <div class="result-desc" id="result-desc"></div>
+      <div id="result-traits"></div>
+      <div class="result-actions">
+        <button class="btn btn-red" onclick="retakeQuiz()">Retake Quiz</button>
+        <button class="btn btn-outline" onclick="shareResult()">Share Result</button>
+        <a href="will-return.html" class="btn btn-outline">Make Your Card</a>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="shared.js"></script>
+<script>
+  injectNav('quiz.html');
+  injectFooter();
+  injectParticles(15);
+
+  const QUESTIONS = [
+    {
+      text: "The mission is a disaster. What do you do?",
+      answers: [
+        { text: "Take charge and improvise a new plan", scores: { IronMan: 3, Cap: 1 } },
+        { text: "Rally the team and hold the line", scores: { Cap: 3, Thor: 1 } },
+        { text: "Find a way to end it in one move", scores: { Thor: 2, Strange: 2 } },
+        { text: "Step back and see the bigger picture", scores: { Strange: 3, BlackWidow: 1 } },
+      ]
+    },
+    {
+      text: "Your greatest strength is…",
+      answers: [
+        { text: "Intelligence and tech", scores: { IronMan: 3, Strange: 1 } },
+        { text: "Loyalty and courage", scores: { Cap: 3, Spidey: 1 } },
+        { text: "Raw power and instinct", scores: { Thor: 3, Hulk: 2 } },
+        { text: "Adaptability and resourcefulness", scores: { BlackWidow: 3, Spidey: 1 } },
+      ]
+    },
+    {
+      text: "Doctor Doom shows up. Your first instinct?",
+      answers: [
+        { text: "Build something to counter his armour", scores: { IronMan: 3 } },
+        { text: "Shield whoever is in danger", scores: { Cap: 3, Spidey: 1 } },
+        { text: "Challenge him head-on", scores: { Thor: 3, Hulk: 1 } },
+        { text: "Look for his weakness before engaging", scores: { Strange: 2, BlackWidow: 3 } },
+      ]
+    },
+    {
+      text: "Pick your ideal team size",
+      answers: [
+        { text: "Solo — I work best alone", scores: { IronMan: 2, BlackWidow: 2 } },
+        { text: "Small trusted squad", scores: { Cap: 2, Spidey: 2 } },
+        { text: "The bigger the better", scores: { Thor: 2, Hulk: 2 } },
+        { text: "Whatever gets the job done", scores: { Strange: 3, Cap: 1 } },
+      ]
+    },
+    {
+      text: "Your weakness you'd never admit to?",
+      answers: [
+        { text: "Arrogance", scores: { IronMan: 3, Thor: 1 } },
+        { text: "Stubbornness", scores: { Cap: 3, Hulk: 1 } },
+        { text: "Anger", scores: { Hulk: 3, Thor: 1 } },
+        { text: "Detachment from others", scores: { Strange: 3, BlackWidow: 1 } },
+      ]
+    },
+    {
+      text: "After Doomsday — assuming we win — you…",
+      answers: [
+        { text: "Get back to building the future", scores: { IronMan: 3 } },
+        { text: "Make sure everyone gets home safe", scores: { Cap: 3, Spidey: 1 } },
+        { text: "Celebrate like a god should", scores: { Thor: 3 } },
+        { text: "Quietly disappear until needed again", scores: { Strange: 2, BlackWidow: 2 } },
+      ]
+    },
+  ];
+
+  const RESULTS = {
+    IronMan:     { name: 'Iron Man', icon: '🦾', desc: 'Brilliant, driven, impossible to ignore. You solve problems with intelligence and sheer force of will — even when everyone else says it can\'t be done. Your ego is a feature, not a bug.', traits: ['Genius', 'Strategist', 'Innovator'] },
+    Cap:         { name: 'Captain America', icon: '🛡️', desc: 'You hold the line when others break. Values mean more to you than convenience, and you\'d sacrifice comfort for what\'s right every single time. People follow you because they trust you.', traits: ['Leader', 'Loyal', 'Relentless'] },
+    Thor:        { name: 'Thor', icon: '⚡', desc: 'Power and heart in equal measure. You charge into chaos with confidence, and somehow it works — usually. You\'ve learned that strength without humility only gets you so far.', traits: ['Powerful', 'Brave', 'Evolving'] },
+    Strange:     { name: 'Doctor Strange', icon: '🔮', desc: 'You see angles others don\'t. Calm under pressure, willing to make hard calls, and always three steps ahead. You carry the weight of knowing too much.', traits: ['Strategic', 'Mystic', 'Calculating'] },
+    BlackWidow:  { name: 'Black Widow', icon: '🕷️', desc: 'No powers. No problem. You outthink, outmaneuver, and outlast everyone in the room. Underestimating you is the last mistake anyone makes.', traits: ['Resourceful', 'Determined', 'Lethal'] },
+    Hulk:        { name: 'The Hulk', icon: '💚', desc: 'Underneath the surface is something enormous. You\'re more complex than people expect — and when pushed, more powerful than anyone can handle. The duality is the point.', traits: ['Fierce', 'Protective', 'Misunderstood'] },
+    Spidey:      { name: 'Spider-Man', icon: '🕸️', desc: 'Great power, great responsibility — you feel that to your core. You\'re upbeat under pressure, quick-witted in a crisis, and somehow always the moral compass of the room.', traits: ['Witty', 'Responsible', 'Heart of gold'] },
+  };
+
+  let scores = { IronMan: 0, Cap: 0, Thor: 0, Strange: 0, BlackWidow: 0, Hulk: 0, Spidey: 0 };
+  let currentQ = 0;
+  let selectedAnswer = null;
+
+  function buildProgress() {
+    const prog = document.getElementById('progress');
+    prog.innerHTML = '';
+    QUESTIONS.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'progress-dot' + (i < currentQ ? ' done' : i === currentQ ? ' active' : '');
+      prog.appendChild(dot);
+    });
+  }
+
+  function renderQuestion() {
+    const q = QUESTIONS[currentQ];
+    document.getElementById('q-number').textContent = `Question ${currentQ + 1} of ${QUESTIONS.length}`;
+    document.getElementById('q-text').textContent = q.text;
+    const answersEl = document.getElementById('answers');
+    answersEl.innerHTML = '';
+    selectedAnswer = null;
+    q.answers.forEach((a, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'answer-btn';
+      btn.textContent = a.text;
+      btn.onclick = () => selectAnswer(i, btn, a.scores);
+      answersEl.appendChild(btn);
+    });
+    buildProgress();
+  }
+
+  function selectAnswer(i, btn, scoreMap) {
+    document.querySelectorAll('.answer-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedAnswer = scoreMap;
+    setTimeout(() => advance(), 400);
+  }
+
+  function advance() {
+    if (selectedAnswer) {
+      Object.entries(selectedAnswer).forEach(([k, v]) => { scores[k] = (scores[k] || 0) + v; });
+    }
+    currentQ++;
+    if (currentQ >= QUESTIONS.length) {
+      showResult();
+    } else {
+      renderQuestion();
+    }
+  }
+
+  function showResult() {
+    document.getElementById('question-card').style.display = 'none';
+    const winner = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
+    const r = RESULTS[winner];
+    document.getElementById('result-icon').textContent = r.icon;
+    document.getElementById('result-name').textContent = r.name;
+    document.getElementById('result-desc').textContent = r.desc;
+    const traitsEl = document.getElementById('result-traits');
+    traitsEl.innerHTML = r.traits.map(t => `<span class="result-trait">${t}</span>`).join('');
+    document.getElementById('result-card').classList.add('visible');
+    buildProgress();
+    document.getElementById('progress').querySelectorAll('.progress-dot').forEach(d => d.classList.add('done'));
+  }
+
+  function retakeQuiz() {
+    scores = { IronMan: 0, Cap: 0, Thor: 0, Strange: 0, BlackWidow: 0, Hulk: 0, Spidey: 0 };
+    currentQ = 0;
+    document.getElementById('question-card').style.display = '';
+    document.getElementById('result-card').classList.remove('visible');
+    renderQuestion();
+  }
+
+  function shareResult() {
+    const name = document.getElementById('result-name').textContent;
+    const text = `I got ${name} — which Avenger are you before Doomsday? #AvengersDoomsday`;
+    if (navigator.share) {
+      navigator.share({ title: 'Which Avenger Are You?', text });
+    } else {
+      navigator.clipboard.writeText(text).then(() => alert('Copied!'));
+    }
+  }
+
+  renderQuestion();
+</script>
+</body>
+</html>

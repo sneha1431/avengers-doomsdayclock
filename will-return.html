@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will Return Generator — Marvel-Style End Credit Card | Avengers Doomsday</title>
+  <meta name="description" content="Create your own Marvel-style Will Return in Avengers Doomsday end credit card. Enter any name, download free.">
+  <meta name="keywords" content="will return generator, avengers doomsday will return, marvel end credits generator, mcu will return meme">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://avengersdoomsdayclock.pages.dev/will-return.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://avengersdoomsdayclock.pages.dev/will-return.html">
+  <meta property="og:title" content="Will Return Generator — Marvel-Style End Credit Cards">
+  <meta property="og:description" content="Create your own Will Return in Avengers Doomsday end credit card. Free fan tool.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Will Return Generator — Avengers Doomsday">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Will Return Generator","url":"https://avengersdoomsdayclock.pages.dev/will-return.html","applicationCategory":"EntertainmentApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .wr-page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    .wr-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .wr-header .eyebrow {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+
+    .wr-header h1 {
+      font-family: var(--bebas);
+      font-size: clamp(40px, 10vw, 80px);
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    .wr-header p {
+      margin-top: 14px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* PREVIEW CARD */
+    .wr-preview-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .wr-card {
+      width: 100%;
+      max-width: 600px;
+      aspect-ratio: 16/9;
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wr-card-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, #1a0000 0%, #000 70%);
+    }
+
+    .wr-card-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(226,54,54,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(226,54,54,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .wr-card-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .wr-name {
+      font-family: var(--bebas);
+      font-size: clamp(32px, 8vw, 64px);
+      letter-spacing: 4px;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 12px;
+      transition: all 0.3s;
+    }
+
+    .wr-will-return {
+      font-size: clamp(10px, 2vw, 14px);
+      letter-spacing: clamp(3px, 1vw, 6px);
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 6px;
+    }
+
+    .wr-movie {
+      font-family: var(--bebas);
+      font-size: clamp(14px, 3.5vw, 28px);
+      letter-spacing: clamp(2px, 0.8vw, 5px);
+      color: var(--red);
+    }
+
+    .wr-logo-row {
+      position: absolute;
+      bottom: 16px;
+      left: 0; right: 0;
+      text-align: center;
+    }
+
+    .wr-logo-text {
+      font-family: var(--bebas);
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.2);
+      text-transform: uppercase;
+    }
+
+    /* ANIMATE CLASSES */
+    .wr-animate .wr-name { animation: wReveal 0.6s ease forwards; }
+    .wr-animate .wr-will-return { animation: wReveal 0.6s ease 0.3s both; }
+    .wr-animate .wr-movie { animation: wReveal 0.6s ease 0.55s both; }
+
+    @keyframes wReveal {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* CONTROLS */
+    .wr-controls {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    .wr-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .wr-field label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .wr-field input, .wr-field select {
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 15px;
+      padding: 10px 14px;
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .wr-field input:focus, .wr-field select:focus {
+      border-color: var(--red);
+    }
+
+    .wr-field select option { background: #111; }
+
+    .wr-row { display: flex; gap: 12px; }
+    .wr-row .wr-field { flex: 1; }
+
+    .wr-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* SUGGESTIONS */
+    .suggestions {
+      margin-top: 24px;
+    }
+
+    .suggestions-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .suggestions-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .suggestion-pill {
+      padding: 6px 14px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #aaa;
+      font-size: 12px;
+      letter-spacing: 1px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .suggestion-pill:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <main class="wr-page">
+    <div class="wr-header">
+      <div class="eyebrow">Marvel Studios Fan Tool</div>
+      <h1>Will Return<br>Generator</h1>
+      <p>Create your own Marvel-style end credit card. Who will return in Avengers: Doomsday?</p>
+    </div>
+
+    <!-- PREVIEW -->
+    <div class="wr-preview-wrap">
+      <div class="wr-card" id="wr-card">
+        <div class="wr-card-bg"></div>
+        <div class="wr-card-lines"></div>
+        <div class="wr-card-content">
+          <div class="wr-name" id="wr-name-display">Tony Stark</div>
+          <div class="wr-will-return" id="wr-prefix-display">will return in</div>
+          <div class="wr-movie" id="wr-movie-display">Avengers: Doomsday</div>
+        </div>
+        <div class="wr-logo-row">
+          <div class="wr-logo-text">Fan-made · Not affiliated with Marvel Studios</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="wr-controls">
+      <div class="wr-field">
+        <label>Character or Name</label>
+        <input type="text" id="wr-name-input" placeholder="e.g. Tony Stark" maxlength="40" value="Tony Stark">
+      </div>
+
+      <div class="wr-row">
+        <div class="wr-field">
+          <label>Prefix</label>
+          <select id="wr-prefix-input">
+            <option value="will return in">will return in</option>
+            <option value="will not return in">will not return in</option>
+            <option value="will definitely return in">will definitely return in</option>
+            <option value="may or may not return in">may or may not return in</option>
+            <option value="has always been in">has always been in</option>
+            <option value="demands to be in">demands to be in</option>
+          </select>
+        </div>
+        <div class="wr-field">
+          <label>Movie</label>
+          <select id="wr-movie-input">
+            <option value="Avengers: Doomsday">Avengers: Doomsday</option>
+            <option value="Avengers: Secret Wars">Avengers: Secret Wars</option>
+            <option value="the MCU">the MCU</option>
+            <option value="your nightmares">your nightmares</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="wr-actions">
+        <button class="btn btn-red" onclick="generateCard()">Generate Card</button>
+        <button class="btn btn-outline" onclick="downloadCard()">Download PNG</button>
+        <button class="btn btn-outline" onclick="shareCard()">Share</button>
+      </div>
+    </div>
+
+    <!-- SUGGESTIONS -->
+    <div class="suggestions">
+      <div class="suggestions-label">Quick picks</div>
+      <div class="suggestions-grid" id="suggestions"></div>
+    </div>
+  </main>
+</div>
+
+<script src="shared.js"></script>
+<script>
+  injectNav('will-return.html');
+  injectFooter();
+  injectParticles(20);
+
+  const SUGGESTIONS = [
+    'Tony Stark', 'Steve Rogers', 'Thor', 'Black Widow', 'Gamora',
+    'Loki', 'Vision', 'Black Panther', 'Doctor Strange', 'Spider-Man',
+    'Your Dog', 'The Chairs', 'Thanos (again)', 'Your Monday Mood'
+  ];
+
+  const nameInput = document.getElementById('wr-name-input');
+  const prefixInput = document.getElementById('wr-prefix-input');
+  const movieInput = document.getElementById('wr-movie-input');
+  const nameDisplay = document.getElementById('wr-name-display');
+  const prefixDisplay = document.getElementById('wr-prefix-display');
+  const movieDisplay = document.getElementById('wr-movie-display');
+  const card = document.getElementById('wr-card');
+
+  // suggestions
+  const grid = document.getElementById('suggestions');
+  SUGGESTIONS.forEach(s => {
+    const pill = document.createElement('button');
+    pill.className = 'suggestion-pill';
+    pill.textContent = s;
+    pill.onclick = () => {
+      nameInput.value = s;
+      updatePreview();
+    };
+    grid.appendChild(pill);
+  });
+
+  function updatePreview() {
+    nameDisplay.textContent = nameInput.value || 'Your Name';
+    prefixDisplay.textContent = prefixInput.value;
+    movieDisplay.textContent = movieInput.value;
+  }
+
+  nameInput.addEventListener('input', updatePreview);
+  prefixInput.addEventListener('change', updatePreview);
+  movieInput.addEventListener('change', updatePreview);
+
+  function generateCard() {
+    updatePreview();
+    card.classList.remove('wr-animate');
+    void card.offsetWidth;
+    card.classList.add('wr-animate');
+  }
+
+  function downloadCard() {
+    // Use html2canvas from CDN
+    if (!window.html2canvas) {
+      const s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      s.onload = () => doDownload();
+      document.head.appendChild(s);
+    } else {
+      doDownload();
+    }
+  }
+
+  function doDownload() {
+    html2canvas(document.getElementById('wr-card'), { backgroundColor: '#000', scale: 2 }).then(canvas => {
+      const a = document.createElement('a');
+      a.href = canvas.toDataURL('image/png');
+      a.download = 'will-return-' + (nameInput.value || 'card').toLowerCase().replace(/\s+/g, '-') + '.png';
+      a.click();
+    });
+  }
+
+  function shareCard() {
+    const name = nameInput.value || 'Your Name';
+    const text = `${name} ${prefixInput.value} ${movieInput.value} 🎬 #AvengersDoomsday`;
+    if (navigator.share) {
+      navigator.share({ title: 'Will Return Generator', text });
+    } else {
+      navigator.clipboard.writeText(text).then(() => alert('Copied to clipboard!'));
+    }
+  }
+
+  generateCard();
+</script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCU Timeline — All Phases 1-6 Leading to Avengers Doomsday</title>
+  <meta name="description" content="The complete MCU film timeline from Phase 1 to Phase 6. Every Marvel movie in order leading to Avengers Doomsday on December 18 2026.">
+  <meta name="keywords" content="mcu timeline, marvel movies in order, mcu phases 1-6, avengers doomsday timeline, marvel cinematic universe films list">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://avengersdoomsdayclock.pages.dev/timeline.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://avengersdoomsdayclock.pages.dev/timeline.html">
+  <meta property="og:title" content="MCU Timeline — All Phases Leading to Avengers Doomsday">
+  <meta property="og:description" content="Every Marvel Cinematic Universe film in order from Phase 1 to Phase 6, ending with Avengers Doomsday December 18 2026.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MCU Timeline Phase 1-6 — Avengers Doomsday">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .tl-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    .tl-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .tl-header .eyebrow {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+
+    .tl-header h1 {
+      font-family: var(--bebas);
+      font-size: clamp(40px, 10vw, 72px);
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    .tl-header p {
+      margin-top: 14px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* PHASE BLOCK */
+    .phase-block {
+      margin-bottom: 56px;
+      position: relative;
+    }
+
+    .phase-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .phase-badge {
+      font-family: var(--bebas);
+      font-size: 11px;
+      letter-spacing: 3px;
+      padding: 4px 12px;
+      border: 1px solid var(--red);
+      color: var(--red);
+    }
+
+    .phase-name {
+      font-family: var(--bebas);
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: #fff;
+    }
+
+    .phase-line {
+      position: absolute;
+      left: 8px;
+      top: 44px;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--red), transparent);
+    }
+
+    /* FILM ROW */
+    .film-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding-left: 28px;
+    }
+
+    .film-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+      position: relative;
+    }
+
+    .film-item:last-child { border-bottom: none; }
+
+    .film-dot {
+      position: absolute;
+      left: -24px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      border: 1px solid rgba(255,255,255,0.15);
+      flex-shrink: 0;
+    }
+
+    .film-dot.doomsday {
+      background: var(--red);
+      border-color: var(--red);
+      box-shadow: 0 0 8px rgba(226,54,54,0.6);
+    }
+
+    .film-year {
+      font-family: var(--bebas);
+      font-size: 14px;
+      color: var(--muted);
+      min-width: 44px;
+      letter-spacing: 1px;
+    }
+
+    .film-title {
+      font-size: 14px;
+      color: #ccc;
+      flex: 1;
+      line-height: 1.3;
+    }
+
+    .film-title.doomsday {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .film-badge {
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+
+    .badge-upcoming {
+      background: rgba(226,54,54,0.15);
+      color: var(--red);
+      border: 1px solid rgba(226,54,54,0.3);
+    }
+
+    .badge-released {
+      background: rgba(255,255,255,0.05);
+      color: #555;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .badge-doomsday {
+      background: var(--red);
+      color: #fff;
+      animation: glow 2s ease infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 0 rgba(226,54,54,0); }
+      50% { box-shadow: 0 0 12px rgba(226,54,54,0.5); }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <main class="tl-page">
+    <div class="tl-header">
+      <div class="eyebrow">Marvel Cinematic Universe</div>
+      <h1>MCU Timeline</h1>
+      <p>Every film from Phase 1 to Phase 6 — the road to Doomsday.</p>
+    </div>
+
+    <div id="timeline"></div>
+  </main>
+</div>
+
+<script src="shared.js"></script>
+<script>
+  injectNav('timeline.html');
+  injectFooter();
+  injectParticles(15);
+
+  const PHASES = [
+    {
+      phase: 'Phase 1', name: 'The Avengers Initiative',
+      films: [
+        { year: 2008, title: 'Iron Man' },
+        { year: 2008, title: 'The Incredible Hulk' },
+        { year: 2010, title: 'Iron Man 2' },
+        { year: 2011, title: 'Thor' },
+        { year: 2011, title: 'Captain America: The First Avenger' },
+        { year: 2012, title: 'The Avengers' },
+      ]
+    },
+    {
+      phase: 'Phase 2', name: 'Expansion',
+      films: [
+        { year: 2013, title: 'Iron Man 3' },
+        { year: 2013, title: 'Thor: The Dark World' },
+        { year: 2014, title: 'Captain America: The Winter Soldier' },
+        { year: 2014, title: 'Guardians of the Galaxy' },
+        { year: 2015, title: 'Avengers: Age of Ultron' },
+        { year: 2015, title: 'Ant-Man' },
+      ]
+    },
+    {
+      phase: 'Phase 3', name: 'The Infinity Saga',
+      films: [
+        { year: 2016, title: 'Captain America: Civil War' },
+        { year: 2016, title: 'Doctor Strange' },
+        { year: 2017, title: 'Guardians of the Galaxy Vol. 2' },
+        { year: 2017, title: 'Spider-Man: Homecoming' },
+        { year: 2017, title: 'Thor: Ragnarok' },
+        { year: 2018, title: 'Black Panther' },
+        { year: 2018, title: 'Avengers: Infinity War' },
+        { year: 2018, title: 'Ant-Man and the Wasp' },
+        { year: 2019, title: 'Captain Marvel' },
+        { year: 2019, title: 'Avengers: Endgame' },
+        { year: 2019, title: 'Spider-Man: Far From Home' },
+      ]
+    },
+    {
+      phase: 'Phase 4', name: 'The Multiverse Saga Begins',
+      films: [
+        { year: 2021, title: 'Black Widow' },
+        { year: 2021, title: 'Shang-Chi and the Legend of the Ten Rings' },
+        { year: 2021, title: 'Eternals' },
+        { year: 2021, title: 'Spider-Man: No Way Home' },
+        { year: 2022, title: 'Doctor Strange in the Multiverse of Madness' },
+        { year: 2022, title: 'Thor: Love and Thunder' },
+        { year: 2022, title: 'Black Panther: Wakanda Forever' },
+      ]
+    },
+    {
+      phase: 'Phase 5', name: 'The Multiverse Expands',
+      films: [
+        { year: 2023, title: 'Ant-Man and the Wasp: Quantumania' },
+        { year: 2023, title: 'Guardians of the Galaxy Vol. 3' },
+        { year: 2023, title: 'The Marvels' },
+        { year: 2024, title: 'Deadpool & Wolverine' },
+        { year: 2025, title: 'Captain America: Brave New World' },
+        { year: 2025, title: 'Thunderbolts*' },
+        { year: 2025, title: 'Fantastic Four: First Steps' },
+      ]
+    },
+    {
+      phase: 'Phase 6', name: 'Doomsday',
+      films: [
+        { year: 2026, title: 'Spider-Man: Brand New Day', upcoming: true },
+        { year: 2026, title: 'Avengers: Doomsday', doomsday: true },
+        { year: 2027, title: 'Avengers: Secret Wars', upcoming: true },
+      ]
+    },
+  ];
+
+  const tl = document.getElementById('timeline');
+
+  PHASES.forEach(ph => {
+    const block = document.createElement('div');
+    block.className = 'phase-block';
+
+    const label = `
+      <div class="phase-label">
+        <div class="phase-badge">${ph.phase}</div>
+        <div class="phase-name">${ph.name}</div>
+      </div>
+      <div class="phase-line"></div>
+    `;
+
+    const films = ph.films.map(f => {
+      const dotClass = f.doomsday ? 'film-dot doomsday' : 'film-dot';
+      const titleClass = f.doomsday ? 'film-title doomsday' : 'film-title';
+      let badge = '';
+      if (f.doomsday) badge = '<span class="film-badge badge-doomsday">Dec 18 2026</span>';
+      else if (f.upcoming) badge = '<span class="film-badge badge-upcoming">Upcoming</span>';
+      else badge = '<span class="film-badge badge-released">Released</span>';
+
+      return `
+        <div class="film-item">
+          <div class="${dotClass}"></div>
+          <div class="film-year">${f.year}</div>
+          <div class="${titleClass}">${f.title}</div>
+          ${badge}
+        </div>
+      `;
+    }).join('');
+
+    block.innerHTML = label + `<div class="film-list">${films}</div>`;
+    tl.appendChild(block);
+  });
+</script>
+</body>
+</html>
