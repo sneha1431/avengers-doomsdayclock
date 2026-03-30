@@ -3,229 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Will Return Generator — Marvel-Style End Credit Card | Avengers Doomsday</title>
-  <meta name="description" content="Create your own Marvel-style Will Return in Avengers Doomsday end credit card. Enter any name, download free.">
-  <meta name="keywords" content="will return generator, avengers doomsday will return, marvel end credits generator, mcu will return meme">
+  <title>Will Return Generator — Marvel-Style Animated Card | Avengers Doomsday</title>
+  <meta name="description" content="Create your own animated Marvel-style 'Will Return in Avengers: Doomsday' card. Download as GIF or PNG. Free fan tool.">
+  <meta name="keywords" content="will return generator, avengers doomsday will return, marvel end credits generator, mcu will return animated gif">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://avengersdoomsdayclock.pages.dev/will-return.html">
+  <link rel="canonical" href="https://avengers-doomsdayclock.pages.dev/will-return.html">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://avengersdoomsdayclock.pages.dev/will-return.html">
-  <meta property="og:title" content="Will Return Generator — Marvel-Style End Credit Cards">
-  <meta property="og:description" content="Create your own Will Return in Avengers Doomsday end credit card. Free fan tool.">
+  <meta property="og:url" content="https://avengers-doomsdayclock.pages.dev/will-return.html">
+  <meta property="og:title" content="Will Return Generator — Animated Marvel-Style Cards">
+  <meta property="og:description" content="Create your own animated Will Return in Avengers Doomsday card. Download as GIF or PNG free.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Will Return Generator — Avengers Doomsday">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Will Return Generator","url":"https://avengersdoomsdayclock.pages.dev/will-return.html","applicationCategory":"EntertainmentApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Will Return Generator","url":"https://avengers-doomsdayclock.pages.dev/will-return.html","applicationCategory":"EntertainmentApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
   <link rel="stylesheet" href="shared.css">
   <style>
     .wr-page {
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto;
       padding: 64px 24px 80px;
     }
-
-    .wr-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
+    .wr-header { text-align: center; margin-bottom: 40px; }
     .wr-header .eyebrow {
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 12px;
+      font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--red); margin-bottom: 12px;
     }
-
     .wr-header h1 {
-      font-family: var(--bebas);
-      font-size: clamp(40px, 10vw, 80px);
-      letter-spacing: 2px;
-      line-height: 1;
+      font-family: var(--bebas); font-size: clamp(40px, 10vw, 72px);
+      letter-spacing: 2px; line-height: 1;
     }
+    .wr-header p { margin-top: 14px; font-size: 14px; color: var(--muted); line-height: 1.6; }
 
-    .wr-header p {
-      margin-top: 14px;
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
+    .canvas-wrap { display: flex; justify-content: center; margin-bottom: 10px; }
+    #wr-canvas { width: 100%; max-width: 640px; aspect-ratio: 16/9; display: block; cursor: pointer; border: 1px solid var(--border); }
 
-    /* PREVIEW CARD */
-    .wr-preview-wrap {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
+    .canvas-hint { text-align: center; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; }
 
-    .wr-card {
-      width: 100%;
-      max-width: 600px;
-      aspect-ratio: 16/9;
-      background: #000;
-      border: 1px solid rgba(255,255,255,0.1);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .wr-card-bg {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% 50%, #1a0000 0%, #000 70%);
-    }
-
-    .wr-card-lines {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(226,54,54,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(226,54,54,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-    }
-
-    .wr-card-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 24px;
-    }
-
-    .wr-name {
-      font-family: var(--bebas);
-      font-size: clamp(32px, 8vw, 64px);
-      letter-spacing: 4px;
-      color: #fff;
-      line-height: 1;
-      margin-bottom: 12px;
-      transition: all 0.3s;
-    }
-
-    .wr-will-return {
-      font-size: clamp(10px, 2vw, 14px);
-      letter-spacing: clamp(3px, 1vw, 6px);
-      text-transform: uppercase;
-      color: #aaa;
-      margin-bottom: 6px;
-    }
-
-    .wr-movie {
-      font-family: var(--bebas);
-      font-size: clamp(14px, 3.5vw, 28px);
-      letter-spacing: clamp(2px, 0.8vw, 5px);
-      color: var(--red);
-    }
-
-    .wr-logo-row {
-      position: absolute;
-      bottom: 16px;
-      left: 0; right: 0;
-      text-align: center;
-    }
-
-    .wr-logo-text {
-      font-family: var(--bebas);
-      font-size: 10px;
-      letter-spacing: 4px;
-      color: rgba(255,255,255,0.2);
-      text-transform: uppercase;
-    }
-
-    /* ANIMATE CLASSES */
-    .wr-animate .wr-name { animation: wReveal 0.6s ease forwards; }
-    .wr-animate .wr-will-return { animation: wReveal 0.6s ease 0.3s both; }
-    .wr-animate .wr-movie { animation: wReveal 0.6s ease 0.55s both; }
-
-    @keyframes wReveal {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* CONTROLS */
-    .wr-controls {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      padding: 28px;
-      margin-bottom: 24px;
-    }
-
-    .wr-field {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-
-    .wr-field label {
-      font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
+    .wr-controls { background: var(--bg3); border: 1px solid var(--border); padding: 28px; margin-bottom: 24px; }
+    .wr-field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+    .wr-field:last-child { margin-bottom: 0; }
+    .wr-field label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
     .wr-field input, .wr-field select {
-      background: #000;
-      border: 1px solid rgba(255,255,255,0.12);
-      color: #fff;
-      font-family: var(--sans);
-      font-size: 15px;
-      padding: 10px 14px;
-      border-radius: 2px;
-      outline: none;
-      transition: border-color 0.2s;
+      background: #000; border: 1px solid rgba(255,255,255,0.12); color: #fff;
+      font-family: var(--sans); font-size: 15px; padding: 10px 14px;
+      border-radius: 2px; outline: none; transition: border-color 0.2s; width: 100%;
     }
-
-    .wr-field input:focus, .wr-field select:focus {
-      border-color: var(--red);
-    }
-
+    .wr-field input:focus, .wr-field select:focus { border-color: var(--red); }
     .wr-field select option { background: #111; }
-
     .wr-row { display: flex; gap: 12px; }
     .wr-row .wr-field { flex: 1; }
+    .wr-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
 
-    .wr-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+    .gif-progress { display: none; margin-top: 16px; background: #111; border: 1px solid var(--border); height: 4px; border-radius: 2px; overflow: hidden; }
+    .gif-progress-bar { height: 100%; background: var(--red); width: 0%; transition: width 0.1s; }
+    .gif-status { display: none; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-top: 8px; text-align: center; }
 
-    /* SUGGESTIONS */
-    .suggestions {
-      margin-top: 24px;
-    }
-
-    .suggestions-label {
-      font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .suggestions-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
+    .suggestions { margin-top: 24px; }
+    .suggestions-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+    .suggestions-grid { display: flex; flex-wrap: wrap; gap: 8px; }
     .suggestion-pill {
-      padding: 6px 14px;
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.1);
-      color: #aaa;
-      font-size: 12px;
-      letter-spacing: 1px;
-      border-radius: 2px;
-      cursor: pointer;
-      transition: all 0.2s;
+      padding: 6px 14px; background: transparent; border: 1px solid rgba(255,255,255,0.1);
+      color: #aaa; font-size: 12px; letter-spacing: 1px; border-radius: 2px; cursor: pointer; transition: all 0.2s;
     }
-
-    .suggestion-pill:hover {
-      border-color: var(--red);
-      color: var(--red);
-    }
+    .suggestion-pill:hover { border-color: var(--red); color: var(--red); }
   </style>
 </head>
 <body>
@@ -234,36 +72,23 @@
     <div class="wr-header">
       <div class="eyebrow">Marvel Studios Fan Tool</div>
       <h1>Will Return<br>Generator</h1>
-      <p>Create your own Marvel-style end credit card. Who will return in Avengers: Doomsday?</p>
+      <p>Cinematic animated reveal — just like the real Doomsday trailers. Download as GIF or PNG.</p>
     </div>
 
-    <!-- PREVIEW -->
-    <div class="wr-preview-wrap">
-      <div class="wr-card" id="wr-card">
-        <div class="wr-card-bg"></div>
-        <div class="wr-card-lines"></div>
-        <div class="wr-card-content">
-          <div class="wr-name" id="wr-name-display">Tony Stark</div>
-          <div class="wr-will-return" id="wr-prefix-display">will return in</div>
-          <div class="wr-movie" id="wr-movie-display">Avengers: Doomsday</div>
-        </div>
-        <div class="wr-logo-row">
-          <div class="wr-logo-text">Fan-made · Not affiliated with Marvel Studios</div>
-        </div>
-      </div>
+    <div class="canvas-wrap">
+      <canvas id="wr-canvas" width="640" height="360"></canvas>
     </div>
+    <div class="canvas-hint">Click the preview to replay · Download GIF to share</div>
 
-    <!-- CONTROLS -->
     <div class="wr-controls">
       <div class="wr-field">
         <label>Character or Name</label>
-        <input type="text" id="wr-name-input" placeholder="e.g. Tony Stark" maxlength="40" value="Tony Stark">
+        <input type="text" id="wr-name" placeholder="e.g. Tony Stark" maxlength="40" value="Tony Stark">
       </div>
-
       <div class="wr-row">
         <div class="wr-field">
           <label>Prefix</label>
-          <select id="wr-prefix-input">
+          <select id="wr-prefix">
             <option value="will return in">will return in</option>
             <option value="will not return in">will not return in</option>
             <option value="will definitely return in">will definitely return in</option>
@@ -274,7 +99,7 @@
         </div>
         <div class="wr-field">
           <label>Movie</label>
-          <select id="wr-movie-input">
+          <select id="wr-movie">
             <option value="Avengers: Doomsday">Avengers: Doomsday</option>
             <option value="Avengers: Secret Wars">Avengers: Secret Wars</option>
             <option value="the MCU">the MCU</option>
@@ -282,15 +107,16 @@
           </select>
         </div>
       </div>
-
       <div class="wr-actions">
-        <button class="btn btn-red" onclick="generateCard()">Generate Card</button>
-        <button class="btn btn-outline" onclick="downloadCard()">Download PNG</button>
+        <button class="btn btn-red" onclick="playAnimation()">▶ Play Animation</button>
+        <button class="btn btn-outline" id="gif-btn" onclick="downloadGif()">Download GIF</button>
+        <button class="btn btn-outline" onclick="downloadPng()">Download PNG</button>
         <button class="btn btn-outline" onclick="shareCard()">Share</button>
       </div>
+      <div class="gif-progress" id="gif-progress"><div class="gif-progress-bar" id="gif-bar"></div></div>
+      <div class="gif-status" id="gif-status"></div>
     </div>
 
-    <!-- SUGGESTIONS -->
     <div class="suggestions">
       <div class="suggestions-label">Quick picks</div>
       <div class="suggestions-grid" id="suggestions"></div>
@@ -300,86 +126,252 @@
 
 <script src="shared.js"></script>
 <script>
-  injectNav('will-return.html');
-  injectFooter();
-  injectParticles(20);
+injectNav('will-return.html');
+injectFooter();
+injectParticles(20);
 
-  const SUGGESTIONS = [
-    'Tony Stark', 'Steve Rogers', 'Thor', 'Black Widow', 'Gamora',
-    'Loki', 'Vision', 'Black Panther', 'Doctor Strange', 'Spider-Man',
-    'Your Dog', 'The Chairs', 'Thanos (again)', 'Your Monday Mood'
-  ];
+const SUGGESTIONS = [
+  'Tony Stark','Steve Rogers','Thor','Black Widow','Gamora',
+  'Loki','Vision','Doctor Strange','Spider-Man','Your Dog',
+  'The Chairs','Thanos (again)','Your Monday Mood','Deadpool'
+];
 
-  const nameInput = document.getElementById('wr-name-input');
-  const prefixInput = document.getElementById('wr-prefix-input');
-  const movieInput = document.getElementById('wr-movie-input');
-  const nameDisplay = document.getElementById('wr-name-display');
-  const prefixDisplay = document.getElementById('wr-prefix-display');
-  const movieDisplay = document.getElementById('wr-movie-display');
-  const card = document.getElementById('wr-card');
+const canvas = document.getElementById('wr-canvas');
+const ctx = canvas.getContext('2d');
+const W = 640, H = 360;
 
-  // suggestions
-  const grid = document.getElementById('suggestions');
-  SUGGESTIONS.forEach(s => {
-    const pill = document.createElement('button');
-    pill.className = 'suggestion-pill';
-    pill.textContent = s;
-    pill.onclick = () => {
-      nameInput.value = s;
-      updatePreview();
-    };
-    grid.appendChild(pill);
-  });
+const T = {
+  fadeInBg:    400,
+  nameStart:   700,
+  nameDone:   1400,
+  prefixStart:1600,
+  prefixDone: 2100,
+  movieStart: 2200,
+  movieDone:  3000,
+  lineStart:  3000,
+  lineDone:   3500,
+  hold:       4800,
+};
 
-  function updatePreview() {
-    nameDisplay.textContent = nameInput.value || 'Your Name';
-    prefixDisplay.textContent = prefixInput.value;
-    movieDisplay.textContent = movieInput.value;
+let animId = null;
+let startTime = null;
+
+function getName()   { return document.getElementById('wr-name').value.trim() || 'Your Name'; }
+function getPrefix() { return document.getElementById('wr-prefix').value; }
+function getMovie()  { return document.getElementById('wr-movie').value; }
+
+function easeOut(t) { return 1 - Math.pow(1-t, 3); }
+function clamp01(v) { return Math.max(0, Math.min(1, v)); }
+function prog(elapsed, start, end) { return easeOut(clamp01((elapsed - start) / (end - start))); }
+
+function drawFrame(elapsed) {
+  ctx.clearRect(0, 0, W, H);
+
+  // background
+  const bgA = clamp01(elapsed / T.fadeInBg);
+  ctx.fillStyle = '#000';
+  ctx.globalAlpha = bgA;
+  ctx.fillRect(0, 0, W, H);
+  ctx.globalAlpha = 1;
+
+  // grid
+  ctx.strokeStyle = `rgba(226,54,54,${bgA * 0.035})`;
+  ctx.lineWidth = 1;
+  for (let x = 0; x < W; x += 40) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+  for (let y = 0; y < H; y += 40) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+
+  const cx = W / 2;
+
+  // NAME
+  const nameP = prog(elapsed, T.nameStart, T.nameDone);
+  if (nameP > 0) {
+    ctx.save();
+    ctx.globalAlpha = nameP;
+    ctx.translate(0, (1 - nameP) * 18);
+    ctx.font = 'bold 64px "Bebas Neue", sans-serif';
+    ctx.fillStyle = '#fff';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    const name = getName().toUpperCase();
+    const mw = ctx.measureText(name).width;
+    const maxW = W - 80;
+    if (mw > maxW) ctx.scale(maxW / mw, 1);
+    ctx.fillText(name, cx, H * 0.415);
+    ctx.restore();
   }
 
-  nameInput.addEventListener('input', updatePreview);
-  prefixInput.addEventListener('change', updatePreview);
-  movieInput.addEventListener('change', updatePreview);
-
-  function generateCard() {
-    updatePreview();
-    card.classList.remove('wr-animate');
-    void card.offsetWidth;
-    card.classList.add('wr-animate');
+  // PREFIX
+  const prefP = prog(elapsed, T.prefixStart, T.prefixDone);
+  if (prefP > 0) {
+    ctx.save();
+    ctx.globalAlpha = prefP;
+    ctx.translate(0, (1 - prefP) * 10);
+    ctx.font = '400 17px "DM Sans", sans-serif';
+    ctx.fillStyle = '#999';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(getPrefix().toUpperCase(), cx, H * 0.575);
+    ctx.restore();
   }
 
-  function downloadCard() {
-    // Use html2canvas from CDN
-    if (!window.html2canvas) {
-      const s = document.createElement('script');
-      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
-      s.onload = () => doDownload();
-      document.head.appendChild(s);
+  // MOVIE
+  const movP = prog(elapsed, T.movieStart, T.movieDone);
+  if (movP > 0) {
+    ctx.save();
+    ctx.globalAlpha = movP;
+    ctx.translate(0, (1 - movP) * 12);
+    ctx.font = 'bold 34px "Bebas Neue", sans-serif';
+    ctx.fillStyle = '#e23636';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.letterSpacing = '3px';
+    ctx.fillText(getMovie().toUpperCase(), cx, H * 0.695);
+    ctx.restore();
+  }
+
+  // RED UNDERLINE
+  const lineP = prog(elapsed, T.lineStart, T.lineDone);
+  if (lineP > 0) {
+    ctx.save();
+    ctx.font = 'bold 34px "Bebas Neue", sans-serif';
+    const mw2 = ctx.measureText(getMovie().toUpperCase()).width;
+    const lx = cx - mw2 / 2;
+    const ly = H * 0.725;
+    ctx.strokeStyle = '#e23636';
+    ctx.lineWidth = 1.5;
+    ctx.globalAlpha = movP;
+    ctx.beginPath();
+    ctx.moveTo(lx, ly);
+    ctx.lineTo(lx + mw2 * lineP, ly);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  // BADGE
+  const badgeP = clamp01((elapsed - T.lineDone) / 500);
+  if (badgeP > 0) {
+    ctx.save();
+    ctx.globalAlpha = badgeP * 0.3;
+    ctx.font = '400 10px "DM Sans", sans-serif';
+    ctx.fillStyle = '#fff';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('FAN-MADE  ·  NOT AFFILIATED WITH MARVEL STUDIOS', cx, H * 0.905);
+    ctx.restore();
+  }
+
+  // vignette
+  const vg = ctx.createRadialGradient(cx, H/2, H*0.15, cx, H/2, H*0.85);
+  vg.addColorStop(0, 'rgba(0,0,0,0)');
+  vg.addColorStop(1, `rgba(0,0,0,${bgA * 0.65})`);
+  ctx.fillStyle = vg;
+  ctx.fillRect(0, 0, W, H);
+}
+
+function playAnimation(onDone) {
+  if (animId) { cancelAnimationFrame(animId); animId = null; }
+  startTime = null;
+  function loop(ts) {
+    if (!startTime) startTime = ts;
+    const elapsed = ts - startTime;
+    drawFrame(elapsed);
+    if (elapsed < T.hold) {
+      animId = requestAnimationFrame(loop);
     } else {
-      doDownload();
+      drawFrame(T.hold);
+      animId = null;
+      if (onDone) onDone();
     }
   }
+  animId = requestAnimationFrame(loop);
+}
 
-  function doDownload() {
-    html2canvas(document.getElementById('wr-card'), { backgroundColor: '#000', scale: 2 }).then(canvas => {
-      const a = document.createElement('a');
-      a.href = canvas.toDataURL('image/png');
-      a.download = 'will-return-' + (nameInput.value || 'card').toLowerCase().replace(/\s+/g, '-') + '.png';
-      a.click();
+function downloadPng() {
+  drawFrame(T.hold);
+  const a = document.createElement('a');
+  a.href = canvas.toDataURL('image/png');
+  a.download = (getName().toLowerCase().replace(/\s+/g,'-') || 'will-return') + '.png';
+  a.click();
+}
+
+function downloadGif() {
+  const btn = document.getElementById('gif-btn');
+  const prog2 = document.getElementById('gif-progress');
+  const bar = document.getElementById('gif-bar');
+  const status = document.getElementById('gif-status');
+
+  btn.textContent = 'Loading...';
+  btn.disabled = true;
+
+  function loadScript(src, cb) {
+    if (document.querySelector(`script[src="${src}"]`)) { cb(); return; }
+    const s = document.createElement('script');
+    s.src = src; s.onload = cb; document.head.appendChild(s);
+  }
+
+  loadScript('https://cdn.jsdelivr.net/npm/gif.js@0.2.0/dist/gif.js', () => {
+    btn.textContent = 'Generating...';
+    prog2.style.display = 'block';
+    status.style.display = 'block';
+    status.textContent = 'Capturing frames...';
+
+    const fps = 24;
+    const totalFrames = Math.floor(T.hold / 1000 * fps);
+    const delay = Math.round(1000 / fps);
+
+    const gif = new GIF({
+      workers: 2, quality: 8,
+      width: W, height: H,
+      workerScript: 'https://cdn.jsdelivr.net/npm/gif.js@0.2.0/dist/gif.worker.js',
     });
-  }
 
-  function shareCard() {
-    const name = nameInput.value || 'Your Name';
-    const text = `${name} ${prefixInput.value} ${movieInput.value} 🎬 #AvengersDoomsday`;
-    if (navigator.share) {
-      navigator.share({ title: 'Will Return Generator', text });
-    } else {
-      navigator.clipboard.writeText(text).then(() => alert('Copied to clipboard!'));
+    for (let i = 0; i <= totalFrames; i++) {
+      drawFrame((i / totalFrames) * T.hold);
+      gif.addFrame(ctx, { copy: true, delay });
+      bar.style.width = (i / totalFrames * 50) + '%';
     }
-  }
 
-  generateCard();
+    status.textContent = 'Encoding GIF...';
+
+    gif.on('progress', p => { bar.style.width = (50 + p * 50) + '%'; });
+
+    gif.on('finished', blob => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = (getName().toLowerCase().replace(/\s+/g,'-') || 'will-return') + '.gif';
+      a.click();
+      URL.revokeObjectURL(url);
+      prog2.style.display = 'none';
+      status.style.display = 'none';
+      bar.style.width = '0%';
+      btn.textContent = 'Download GIF';
+      btn.disabled = false;
+      playAnimation();
+    });
+
+    gif.render();
+  });
+}
+
+function shareCard() {
+  const text = `${getName()} ${getPrefix()} ${getMovie()} 🎬 #AvengersDoomsday`;
+  if (navigator.share) { navigator.share({ title: 'Will Return Generator', text }); }
+  else { navigator.clipboard.writeText(text).then(() => alert('Copied!')); }
+}
+
+// suggestions
+const grid = document.getElementById('suggestions');
+SUGGESTIONS.forEach(s => {
+  const pill = document.createElement('button');
+  pill.className = 'suggestion-pill';
+  pill.textContent = s;
+  pill.onclick = () => { document.getElementById('wr-name').value = s; playAnimation(); };
+  grid.appendChild(pill);
+});
+
+canvas.addEventListener('click', () => playAnimation());
+window.addEventListener('load', () => setTimeout(playAnimation, 500));
 </script>
 </body>
 </html>
