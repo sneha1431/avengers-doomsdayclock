@@ -57,10 +57,10 @@
       flex-wrap: wrap; margin-bottom: 24px;
     }
 
-    .article-meta span { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+    .article-meta span { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #aaa; }
     .article-meta .dot { color: #333; }
 
-    .doom-intro { font-size: 17px; color: #bbb; line-height: 1.85; }
+    .doom-intro { font-size: 17px; color: #c8c8c8; line-height: 1.85; }
 
     /* STAT CARDS */
     .doom-stats {
@@ -90,7 +90,7 @@
       font-size: 10px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--muted);
+      color: #aaa;
     }
 
     /* SECTIONS */
@@ -128,7 +128,7 @@
     }
 
     .doom-section p {
-      font-size: 15px; color: #aaa;
+      font-size: 15px; color: #c0c0c0;
       line-height: 1.85; margin-bottom: 16px;
     }
 
@@ -143,7 +143,7 @@
     }
 
     .callout p {
-      font-size: 14px; color: #bbb;
+      font-size: 14px; color: #c8c8c8;
       line-height: 1.7; margin: 0; font-style: italic;
     }
 
@@ -171,7 +171,7 @@
       margin-bottom: 6px;
     }
 
-    .power-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .power-desc { font-size: 12px; color: #aaa; line-height: 1.5; }
 
     /* COMPARE TABLE */
     .compare-table {
@@ -191,20 +191,20 @@
       color: #fff;
     }
 
-    .compare-table th:first-child { color: var(--muted); }
+    .compare-table th:first-child { color: #aaa; }
     .compare-table th:nth-child(2) { color: #f5a623; }
     .compare-table th:nth-child(3) { color: var(--red); }
 
     .compare-table td {
       padding: 12px 16px;
       border-bottom: 1px solid rgba(255,255,255,0.04);
-      color: #888;
+      color: #b0b0b0;
       vertical-align: top;
       line-height: 1.5;
     }
 
     .compare-table tr:last-child td { border-bottom: none; }
-    .compare-table td:first-child { color: var(--muted); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+    .compare-table td:first-child { color: #aaa; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
 
     /* TIMELINE */
     .doom-timeline { margin: 24px 0; }
@@ -227,18 +227,45 @@
       padding-top: 2px;
     }
 
-    .doom-tl-text { font-size: 14px; color: #999; line-height: 1.6; }
+    .doom-tl-text { font-size: 14px; color: #b8b8b8; line-height: 1.6; }
     .doom-tl-text strong { color: #ccc; font-weight: 500; }
 
     /* RELATED */
     .related { margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--border); }
-    .related-title { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+    .related-title { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #aaa; margin-bottom: 20px; }
     .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
     .related-card { background: var(--bg); padding: 20px; transition: background 0.15s; }
     .related-card:hover { background: var(--bg3); }
     .related-card-title { font-family: var(--bebas); font-size: 18px; letter-spacing: 1px; color: #fff; margin-bottom: 6px; line-height: 1.1; }
-    .related-card-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .related-card-desc { font-size: 12px; color: #aaa; line-height: 1.5; }
     .related-card-link { display: block; font-size: 11px; letter-spacing: 2px; color: var(--red); text-transform: uppercase; margin-top: 12px; }
+
+    @media (max-width: 640px) {
+      .article-wrap, .wr-page, .quiz-page, .tl-page, .cast-page, .news-page {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 40px;
+      }
+      .doom-section p, .scene p, .article-conclusion p, .news-body {
+        font-size: 16px !important;
+        line-height: 1.8 !important;
+        color: #c8c8c8 !important;
+      }
+      .cast-character { font-size: 20px !important; }
+      .cast-actor { font-size: 14px !important; color: #bbb !important; }
+      .film-title { font-size: 15px !important; color: #ccc !important; }
+      .film-year { font-size: 14px !important; color: #aaa !important; }
+      .news-headline { font-size: 20px !important; }
+      .news-date { font-size: 11px !important; }
+      .answer-btn { font-size: 15px !important; padding: 14px 16px !important; }
+      .q-text { font-size: 24px !important; }
+      .compare-table { font-size: 13px !important; }
+      .compare-table td, .compare-table th { padding: 10px 10px !important; }
+      .power-desc { font-size: 13px !important; color: #bbb !important; }
+      .doom-tl-text { font-size: 14px !important; color: #c0c0c0 !important; }
+      .toc-list a { font-size: 14px !important; color: #bbb !important; }
+      .related-card-desc { font-size: 13px !important; color: #bbb !important; }
+    }
   </style>
 </head>
 <body>
