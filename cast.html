@@ -45,7 +45,7 @@
     .cast-header p {
       margin-top: 14px;
       font-size: 14px;
-      color: var(--muted);
+      color: #aaa;
     }
 
     /* FILTERS */
@@ -59,7 +59,7 @@
     .filter-btn {
       background: transparent;
       border: 1px solid rgba(255,255,255,0.1);
-      color: var(--muted);
+      color: #aaa;
       font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -115,7 +115,7 @@
 
     .cast-actor {
       font-size: 14px;
-      color: var(--muted);
+      color: #aaa;
       line-height: 1.4;
     }
 
@@ -149,9 +149,36 @@
     .cast-count {
       font-size: 11px;
       letter-spacing: 2px;
-      color: var(--muted);
+      color: #aaa;
       text-transform: uppercase;
       margin-bottom: 16px;
+    }
+
+    @media (max-width: 640px) {
+      .article-wrap, .wr-page, .quiz-page, .tl-page, .cast-page, .news-page {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 40px;
+      }
+      .doom-section p, .scene p, .article-conclusion p, .news-body {
+        font-size: 16px !important;
+        line-height: 1.8 !important;
+        color: #c8c8c8 !important;
+      }
+      .cast-character { font-size: 20px !important; }
+      .cast-actor { font-size: 14px !important; color: #bbb !important; }
+      .film-title { font-size: 15px !important; color: #ccc !important; }
+      .film-year { font-size: 14px !important; color: #aaa !important; }
+      .news-headline { font-size: 20px !important; }
+      .news-date { font-size: 11px !important; }
+      .answer-btn { font-size: 15px !important; padding: 14px 16px !important; }
+      .q-text { font-size: 24px !important; }
+      .compare-table { font-size: 13px !important; }
+      .compare-table td, .compare-table th { padding: 10px 10px !important; }
+      .power-desc { font-size: 13px !important; color: #bbb !important; }
+      .doom-tl-text { font-size: 14px !important; color: #c0c0c0 !important; }
+      .toc-list a { font-size: 14px !important; color: #bbb !important; }
+      .related-card-desc { font-size: 13px !important; color: #bbb !important; }
     }
   </style>
 </head>
