@@ -4,42 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Will Return Generator — Marvel-Style Animated Card | Avengers Doomsday</title>
-  <meta name="description" content="Create your own animated Marvel-style 'Will Return in Avengers: Doomsday' card. Download as GIF or PNG. Free fan tool.">
-  <meta name="keywords" content="will return generator, avengers doomsday will return, marvel end credits generator, mcu will return animated gif">
+  <meta name="description" content="Create your own animated Marvel-style 'Will Return in Avengers: Doomsday' card. Export as MP4 or PNG. Free fan tool.">
+  <meta name="keywords" content="will return generator, avengers doomsday will return, marvel end credits generator, mcu will return animated">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://avengers-doomsdayclock.pages.dev/will-return.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://avengers-doomsdayclock.pages.dev/will-return.html">
   <meta property="og:title" content="Will Return Generator — Animated Marvel-Style Cards">
-  <meta property="og:description" content="Create your own animated Will Return in Avengers Doomsday card. Download as GIF or PNG free.">
+  <meta property="og:description" content="Create your own animated Will Return in Avengers Doomsday card. Export as MP4 or PNG free.">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Will Return Generator","url":"https://avengers-doomsdayclock.pages.dev/will-return.html","applicationCategory":"EntertainmentApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
   <link rel="stylesheet" href="shared.css">
   <style>
-    .wr-page {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 64px 24px 80px;
-    }
+    .wr-page { max-width: 780px; margin: 0 auto; padding: 64px 24px 80px; }
     .wr-header { text-align: center; margin-bottom: 40px; }
-    .wr-header .eyebrow {
-      font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
-      color: var(--red); margin-bottom: 12px;
-    }
-    .wr-header h1 {
-      font-family: var(--bebas); font-size: clamp(40px, 10vw, 72px);
-      letter-spacing: 2px; line-height: 1;
-    }
+    .wr-header .eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+    .wr-header h1 { font-family: var(--bebas); font-size: clamp(40px, 10vw, 72px); letter-spacing: 2px; line-height: 1; }
     .wr-header p { margin-top: 14px; font-size: 14px; color: var(--muted); line-height: 1.6; }
 
     .canvas-wrap { display: flex; justify-content: center; margin-bottom: 10px; }
     #wr-canvas { width: 100%; max-width: 640px; aspect-ratio: 16/9; display: block; cursor: pointer; border: 1px solid var(--border); }
-
     .canvas-hint { text-align: center; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; }
 
     .wr-controls { background: var(--bg3); border: 1px solid var(--border); padding: 28px; margin-bottom: 24px; }
     .wr-field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
-    .wr-field:last-child { margin-bottom: 0; }
     .wr-field label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
     .wr-field input, .wr-field select {
       background: #000; border: 1px solid rgba(255,255,255,0.12); color: #fff;
@@ -52,9 +40,10 @@
     .wr-row .wr-field { flex: 1; }
     .wr-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
 
-    .gif-progress { display: none; margin-top: 16px; background: #111; border: 1px solid var(--border); height: 4px; border-radius: 2px; overflow: hidden; }
-    .gif-progress-bar { height: 100%; background: var(--red); width: 0%; transition: width 0.1s; }
-    .gif-status { display: none; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-top: 8px; text-align: center; }
+    .export-status {
+      margin-top: 14px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--red); text-align: center; min-height: 18px;
+    }
 
     .suggestions { margin-top: 24px; }
     .suggestions-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
@@ -64,6 +53,10 @@
       color: #aaa; font-size: 12px; letter-spacing: 1px; border-radius: 2px; cursor: pointer; transition: all 0.2s;
     }
     .suggestion-pill:hover { border-color: var(--red); color: var(--red); }
+
+    .compat-note {
+      font-size: 12px; color: #555; text-align: center; margin-top: 10px; line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -72,13 +65,13 @@
     <div class="wr-header">
       <div class="eyebrow">Marvel Studios Fan Tool</div>
       <h1>Will Return<br>Generator</h1>
-      <p>Cinematic animated reveal — just like the real Doomsday trailers. Download as GIF or PNG.</p>
+      <p>Cinematic animated reveal — just like the real Doomsday trailers. Export as MP4 video or PNG.</p>
     </div>
 
     <div class="canvas-wrap">
       <canvas id="wr-canvas" width="640" height="360"></canvas>
     </div>
-    <div class="canvas-hint">Click the preview to replay · Download GIF to share</div>
+    <div class="canvas-hint">Click preview to replay · Export MP4 to share on socials</div>
 
     <div class="wr-controls">
       <div class="wr-field">
@@ -107,14 +100,15 @@
           </select>
         </div>
       </div>
+
       <div class="wr-actions">
-        <button class="btn btn-red" onclick="playAnimation()">▶ Play Animation</button>
-        <button class="btn btn-outline" id="gif-btn" onclick="downloadGif()">Download GIF</button>
+        <button class="btn btn-red" id="play-btn" onclick="playAnimation()">▶ Play</button>
+        <button class="btn btn-outline" id="mp4-btn" onclick="exportMp4()">Export MP4</button>
         <button class="btn btn-outline" onclick="downloadPng()">Download PNG</button>
         <button class="btn btn-outline" onclick="shareCard()">Share</button>
       </div>
-      <div class="gif-progress" id="gif-progress"><div class="gif-progress-bar" id="gif-bar"></div></div>
-      <div class="gif-status" id="gif-status"></div>
+      <div class="export-status" id="export-status"></div>
+      <div class="compat-note" id="compat-note"></div>
     </div>
 
     <div class="suggestions">
@@ -140,130 +134,127 @@ const canvas = document.getElementById('wr-canvas');
 const ctx = canvas.getContext('2d');
 const W = 640, H = 360;
 
+// timing ms
 const T = {
-  fadeInBg:    400,
+  bgFade:      400,
   nameStart:   700,
-  nameDone:   1400,
-  prefixStart:1600,
-  prefixDone: 2100,
-  movieStart: 2200,
-  movieDone:  3000,
-  lineStart:  3000,
-  lineDone:   3500,
-  hold:       4800,
+  nameDone:   1500,
+  prefStart:  1700,
+  prefDone:   2200,
+  movStart:   2300,
+  movDone:    3100,
+  lineStart:  3100,
+  lineDone:   3600,
+  badgeStart: 3700,
+  hold:       5200,
 };
 
-let animId = null;
-let startTime = null;
+let animId = null, startTime = null;
 
-function getName()   { return document.getElementById('wr-name').value.trim() || 'Your Name'; }
-function getPrefix() { return document.getElementById('wr-prefix').value; }
-function getMovie()  { return document.getElementById('wr-movie').value; }
+const getName   = () => document.getElementById('wr-name').value.trim() || 'Your Name';
+const getPrefix = () => document.getElementById('wr-prefix').value;
+const getMovie  = () => document.getElementById('wr-movie').value;
 
-function easeOut(t) { return 1 - Math.pow(1-t, 3); }
-function clamp01(v) { return Math.max(0, Math.min(1, v)); }
-function prog(elapsed, start, end) { return easeOut(clamp01((elapsed - start) / (end - start))); }
+const easeOut = t => 1 - Math.pow(1 - t, 3);
+const clamp   = (v, a, b) => Math.max(a, Math.min(b, v));
+const prog    = (e, s, d) => easeOut(clamp((e - s) / (d - s), 0, 1));
 
 function drawFrame(elapsed) {
   ctx.clearRect(0, 0, W, H);
 
-  // background
-  const bgA = clamp01(elapsed / T.fadeInBg);
+  // black bg
+  const bgA = clamp(elapsed / T.bgFade, 0, 1);
   ctx.fillStyle = '#000';
   ctx.globalAlpha = bgA;
   ctx.fillRect(0, 0, W, H);
   ctx.globalAlpha = 1;
 
-  // grid
-  ctx.strokeStyle = `rgba(226,54,54,${bgA * 0.035})`;
+  // subtle red grid
+  ctx.strokeStyle = `rgba(226,54,54,${bgA * 0.04})`;
   ctx.lineWidth = 1;
-  for (let x = 0; x < W; x += 40) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
-  for (let y = 0; y < H; y += 40) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+  for (let x = 0; x <= W; x += 40) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+  for (let y = 0; y <= H; y += 40) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
 
   const cx = W / 2;
 
   // NAME
-  const nameP = prog(elapsed, T.nameStart, T.nameDone);
-  if (nameP > 0) {
+  const np = prog(elapsed, T.nameStart, T.nameDone);
+  if (np > 0) {
     ctx.save();
-    ctx.globalAlpha = nameP;
-    ctx.translate(0, (1 - nameP) * 18);
-    ctx.font = 'bold 64px "Bebas Neue", sans-serif';
+    ctx.globalAlpha = np;
+    ctx.translate(0, (1 - np) * 20);
+    ctx.font = 'bold 64px "Bebas Neue", Arial, sans-serif';
     ctx.fillStyle = '#fff';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     const name = getName().toUpperCase();
     const mw = ctx.measureText(name).width;
-    const maxW = W - 80;
-    if (mw > maxW) ctx.scale(maxW / mw, 1);
+    if (mw > W - 80) ctx.scale((W - 80) / mw, 1);
     ctx.fillText(name, cx, H * 0.415);
     ctx.restore();
   }
 
   // PREFIX
-  const prefP = prog(elapsed, T.prefixStart, T.prefixDone);
-  if (prefP > 0) {
+  const pp = prog(elapsed, T.prefStart, T.prefDone);
+  if (pp > 0) {
     ctx.save();
-    ctx.globalAlpha = prefP;
-    ctx.translate(0, (1 - prefP) * 10);
-    ctx.font = '400 17px "DM Sans", sans-serif';
+    ctx.globalAlpha = pp;
+    ctx.translate(0, (1 - pp) * 10);
+    ctx.font = '400 16px "DM Sans", Arial, sans-serif';
     ctx.fillStyle = '#999';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText(getPrefix().toUpperCase(), cx, H * 0.575);
+    ctx.fillText(getPrefix().toUpperCase(), cx, H * 0.578);
     ctx.restore();
   }
 
-  // MOVIE
-  const movP = prog(elapsed, T.movieStart, T.movieDone);
-  if (movP > 0) {
+  // MOVIE TITLE
+  const mp = prog(elapsed, T.movStart, T.movDone);
+  if (mp > 0) {
     ctx.save();
-    ctx.globalAlpha = movP;
-    ctx.translate(0, (1 - movP) * 12);
-    ctx.font = 'bold 34px "Bebas Neue", sans-serif';
+    ctx.globalAlpha = mp;
+    ctx.translate(0, (1 - mp) * 12);
+    ctx.font = 'bold 36px "Bebas Neue", Arial, sans-serif';
     ctx.fillStyle = '#e23636';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.letterSpacing = '3px';
     ctx.fillText(getMovie().toUpperCase(), cx, H * 0.695);
     ctx.restore();
   }
 
-  // RED UNDERLINE
-  const lineP = prog(elapsed, T.lineStart, T.lineDone);
-  if (lineP > 0) {
+  // UNDERLINE
+  const lp = prog(elapsed, T.lineStart, T.lineDone);
+  if (lp > 0 && mp > 0) {
     ctx.save();
-    ctx.font = 'bold 34px "Bebas Neue", sans-serif';
+    ctx.font = 'bold 36px "Bebas Neue", Arial, sans-serif';
     const mw2 = ctx.measureText(getMovie().toUpperCase()).width;
-    const lx = cx - mw2 / 2;
-    const ly = H * 0.725;
     ctx.strokeStyle = '#e23636';
     ctx.lineWidth = 1.5;
-    ctx.globalAlpha = movP;
+    ctx.globalAlpha = mp;
     ctx.beginPath();
-    ctx.moveTo(lx, ly);
-    ctx.lineTo(lx + mw2 * lineP, ly);
+    ctx.moveTo(cx - mw2 / 2, H * 0.727);
+    ctx.lineTo(cx - mw2 / 2 + mw2 * lp, H * 0.727);
     ctx.stroke();
     ctx.restore();
   }
 
   // BADGE
-  const badgeP = clamp01((elapsed - T.lineDone) / 500);
-  if (badgeP > 0) {
+  const bp = prog(elapsed, T.badgeStart, T.badgeStart + 600);
+  if (bp > 0) {
     ctx.save();
-    ctx.globalAlpha = badgeP * 0.3;
-    ctx.font = '400 10px "DM Sans", sans-serif';
+    ctx.globalAlpha = bp * 0.28;
+    ctx.font = '400 10px "DM Sans", Arial, sans-serif';
     ctx.fillStyle = '#fff';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText('FAN-MADE  ·  NOT AFFILIATED WITH MARVEL STUDIOS', cx, H * 0.905);
+    ctx.fillText('FAN-MADE  ·  NOT AFFILIATED WITH MARVEL STUDIOS  ·  AVENGERS-DOOMSDAYCLOCK.PAGES.DEV', cx, H * 0.91);
     ctx.restore();
   }
 
   // vignette
-  const vg = ctx.createRadialGradient(cx, H/2, H*0.15, cx, H/2, H*0.85);
+  const vg = ctx.createRadialGradient(cx, H/2, H * 0.12, cx, H/2, H * 0.85);
   vg.addColorStop(0, 'rgba(0,0,0,0)');
-  vg.addColorStop(1, `rgba(0,0,0,${bgA * 0.65})`);
+  vg.addColorStop(1, `rgba(0,0,0,${bgA * 0.6})`);
   ctx.fillStyle = vg;
   ctx.fillRect(0, 0, W, H);
 }
@@ -273,9 +264,9 @@ function playAnimation(onDone) {
   startTime = null;
   function loop(ts) {
     if (!startTime) startTime = ts;
-    const elapsed = ts - startTime;
-    drawFrame(elapsed);
-    if (elapsed < T.hold) {
+    const e = ts - startTime;
+    drawFrame(e);
+    if (e < T.hold) {
       animId = requestAnimationFrame(loop);
     } else {
       drawFrame(T.hold);
@@ -287,6 +278,7 @@ function playAnimation(onDone) {
 }
 
 function downloadPng() {
+  if (animId) { cancelAnimationFrame(animId); animId = null; }
   drawFrame(T.hold);
   const a = document.createElement('a');
   a.href = canvas.toDataURL('image/png');
@@ -294,71 +286,88 @@ function downloadPng() {
   a.click();
 }
 
-function downloadGif() {
-  const btn = document.getElementById('gif-btn');
-  const prog2 = document.getElementById('gif-progress');
-  const bar = document.getElementById('gif-bar');
-  const status = document.getElementById('gif-status');
+function exportMp4() {
+  const statusEl = document.getElementById('export-status');
+  const btn = document.getElementById('mp4-btn');
 
-  btn.textContent = 'Loading...';
-  btn.disabled = true;
+  // check support
+  const mimeType = MediaRecorder.isTypeSupported('video/webm;codecs=vp9')
+    ? 'video/webm;codecs=vp9'
+    : MediaRecorder.isTypeSupported('video/webm')
+    ? 'video/webm'
+    : null;
 
-  function loadScript(src, cb) {
-    if (document.querySelector(`script[src="${src}"]`)) { cb(); return; }
-    const s = document.createElement('script');
-    s.src = src; s.onload = cb; document.head.appendChild(s);
+  if (!mimeType) {
+    statusEl.textContent = 'Your browser does not support video export. Try Chrome or Edge.';
+    return;
   }
 
-  loadScript('https://cdn.jsdelivr.net/npm/gif.js@0.2.0/dist/gif.js', () => {
-    btn.textContent = 'Generating...';
-    prog2.style.display = 'block';
-    status.style.display = 'block';
-    status.textContent = 'Capturing frames...';
+  btn.textContent = 'Recording...';
+  btn.disabled = true;
+  statusEl.textContent = 'Recording animation...';
 
-    const fps = 24;
-    const totalFrames = Math.floor(T.hold / 1000 * fps);
-    const delay = Math.round(1000 / fps);
+  const chunks = [];
+  const stream = canvas.captureStream(60);
+  const recorder = new MediaRecorder(stream, { mimeType, videoBitsPerSecond: 4000000 });
 
-    const gif = new GIF({
-      workers: 2, quality: 8,
-      width: W, height: H,
-      workerScript: 'https://cdn.jsdelivr.net/npm/gif.js@0.2.0/dist/gif.worker.js',
-    });
+  recorder.ondataavailable = e => { if (e.data.size > 0) chunks.push(e.data); };
 
-    for (let i = 0; i <= totalFrames; i++) {
-      drawFrame((i / totalFrames) * T.hold);
-      gif.addFrame(ctx, { copy: true, delay });
-      bar.style.width = (i / totalFrames * 50) + '%';
+  recorder.onstop = () => {
+    const blob = new Blob(chunks, { type: mimeType });
+    const ext = mimeType.includes('webm') ? 'webm' : 'mp4';
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = (getName().toLowerCase().replace(/\s+/g,'-') || 'will-return') + '.' + ext;
+    a.click();
+    URL.revokeObjectURL(url);
+
+    btn.textContent = 'Export MP4';
+    btn.disabled = false;
+    statusEl.textContent = 'Download started! (WebM plays on all devices, rename to .mp4 if needed)';
+    setTimeout(() => { statusEl.textContent = ''; }, 5000);
+
+    // replay after export
+    playAnimation();
+  };
+
+  recorder.start();
+
+  // play animation while recording
+  if (animId) { cancelAnimationFrame(animId); animId = null; }
+  startTime = null;
+
+  function loop(ts) {
+    if (!startTime) startTime = ts;
+    const e = ts - startTime;
+    drawFrame(e);
+    if (e < T.hold) {
+      animId = requestAnimationFrame(loop);
+    } else {
+      drawFrame(T.hold);
+      animId = null;
+      // hold 3 extra frames then stop
+      setTimeout(() => recorder.stop(), 200);
     }
-
-    status.textContent = 'Encoding GIF...';
-
-    gif.on('progress', p => { bar.style.width = (50 + p * 50) + '%'; });
-
-    gif.on('finished', blob => {
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = (getName().toLowerCase().replace(/\s+/g,'-') || 'will-return') + '.gif';
-      a.click();
-      URL.revokeObjectURL(url);
-      prog2.style.display = 'none';
-      status.style.display = 'none';
-      bar.style.width = '0%';
-      btn.textContent = 'Download GIF';
-      btn.disabled = false;
-      playAnimation();
-    });
-
-    gif.render();
-  });
+  }
+  animId = requestAnimationFrame(loop);
 }
 
 function shareCard() {
   const text = `${getName()} ${getPrefix()} ${getMovie()} 🎬 #AvengersDoomsday`;
   if (navigator.share) { navigator.share({ title: 'Will Return Generator', text }); }
-  else { navigator.clipboard.writeText(text).then(() => alert('Copied!')); }
+  else { navigator.clipboard.writeText(text).then(() => alert('Copied to clipboard!')); }
 }
+
+// check MediaRecorder support on load
+window.addEventListener('load', () => {
+  const note = document.getElementById('compat-note');
+  if (typeof MediaRecorder === 'undefined') {
+    note.textContent = 'Video export not supported in this browser. Use Chrome, Edge, or Firefox for MP4 export.';
+    document.getElementById('mp4-btn').disabled = true;
+  }
+  setTimeout(playAnimation, 500);
+});
 
 // suggestions
 const grid = document.getElementById('suggestions');
@@ -371,7 +380,6 @@ SUGGESTIONS.forEach(s => {
 });
 
 canvas.addEventListener('click', () => playAnimation());
-window.addEventListener('load', () => setTimeout(playAnimation, 500));
 </script>
 </body>
 </html>
