@@ -7,6 +7,7 @@ function injectNav(activePage) {
     { href: 'quiz.html', label: 'Which Avenger?' },
     { href: 'timeline.html', label: 'MCU Timeline' },
     { href: 'cast.html', label: 'Cast' },
+    { href: 'doctor-doom.html', label: 'Doctor Doom' },
   ];
 
   const links = pages.map(p =>
