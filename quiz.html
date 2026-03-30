@@ -72,7 +72,7 @@
       font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--muted);
+      color: #aaa;
       margin-bottom: 16px;
     }
 
@@ -144,7 +144,7 @@
       font-size: 11px;
       letter-spacing: 4px;
       text-transform: uppercase;
-      color: var(--muted);
+      color: #aaa;
       margin-bottom: 12px;
     }
 
@@ -159,7 +159,7 @@
 
     .result-desc {
       font-size: 15px;
-      color: #aaa;
+      color: #c0c0c0;
       line-height: 1.7;
       max-width: 440px;
       margin: 0 auto 32px;
@@ -172,7 +172,7 @@
       font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--muted);
+      color: #aaa;
       border-radius: 2px;
       margin: 4px;
     }
@@ -183,6 +183,33 @@
       gap: 12px;
       justify-content: center;
       flex-wrap: wrap;
+    }
+
+    @media (max-width: 640px) {
+      .article-wrap, .wr-page, .quiz-page, .tl-page, .cast-page, .news-page {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 40px;
+      }
+      .doom-section p, .scene p, .article-conclusion p, .news-body {
+        font-size: 16px !important;
+        line-height: 1.8 !important;
+        color: #c8c8c8 !important;
+      }
+      .cast-character { font-size: 20px !important; }
+      .cast-actor { font-size: 14px !important; color: #bbb !important; }
+      .film-title { font-size: 15px !important; color: #ccc !important; }
+      .film-year { font-size: 14px !important; color: #aaa !important; }
+      .news-headline { font-size: 20px !important; }
+      .news-date { font-size: 11px !important; }
+      .answer-btn { font-size: 15px !important; padding: 14px 16px !important; }
+      .q-text { font-size: 24px !important; }
+      .compare-table { font-size: 13px !important; }
+      .compare-table td, .compare-table th { padding: 10px 10px !important; }
+      .power-desc { font-size: 13px !important; color: #bbb !important; }
+      .doom-tl-text { font-size: 14px !important; color: #c0c0c0 !important; }
+      .toc-list a { font-size: 14px !important; color: #bbb !important; }
+      .related-card-desc { font-size: 13px !important; color: #bbb !important; }
     }
   </style>
 </head>
