@@ -103,7 +103,7 @@
 
       <div class="wr-actions">
         <button class="btn btn-red" id="play-btn" onclick="playAnimation()">▶ Play</button>
-        <button class="btn btn-outline" id="mp4-btn" onclick="exportMp4()">Export MP4</button>
+        <button class="btn btn-outline" id="mp4-btn" onclick="exportMp4()">Export MP4 ↓</button>
         <button class="btn btn-outline" onclick="downloadPng()">Download PNG</button>
         <button class="btn btn-outline" onclick="shareCard()">Share</button>
       </div>
@@ -286,72 +286,98 @@ function downloadPng() {
   a.click();
 }
 
-function exportMp4() {
+async function exportMp4() {
   const statusEl = document.getElementById('export-status');
   const btn = document.getElementById('mp4-btn');
 
-  // check support
-  const mimeType = MediaRecorder.isTypeSupported('video/webm;codecs=vp9')
-    ? 'video/webm;codecs=vp9'
-    : MediaRecorder.isTypeSupported('video/webm')
-    ? 'video/webm'
-    : null;
-
-  if (!mimeType) {
-    statusEl.textContent = 'Your browser does not support video export. Try Chrome or Edge.';
-    return;
-  }
-
-  btn.textContent = 'Recording...';
+  btn.textContent = 'Loading encoder...';
   btn.disabled = true;
-  statusEl.textContent = 'Recording animation...';
+  statusEl.textContent = 'Loading ffmpeg (first time ~5 seconds)...';
 
-  const chunks = [];
-  const stream = canvas.captureStream(60);
-  const recorder = new MediaRecorder(stream, { mimeType, videoBitsPerSecond: 4000000 });
+  try {
+    if (!window._ffmpegLoaded) {
+      await new Promise((res, rej) => {
+        const s = document.createElement('script');
+        s.src = 'https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js';
+        s.onload = res; s.onerror = rej;
+        document.head.appendChild(s);
+      });
+      window._ffmpegLoaded = true;
+    }
 
-  recorder.ondataavailable = e => { if (e.data.size > 0) chunks.push(e.data); };
+    const { createFFmpeg } = FFmpeg;
+    if (!window._ff) window._ff = createFFmpeg({ log: false });
+    const ff = window._ff;
+    if (!ff.isLoaded()) {
+      statusEl.textContent = 'Loading encoder...';
+      await ff.load();
+    }
 
-  recorder.onstop = () => {
-    const blob = new Blob(chunks, { type: mimeType });
-    const ext = mimeType.includes('webm') ? 'webm' : 'mp4';
+    const fps = 25;
+    const totalFrames = Math.ceil(T.hold / 1000 * fps);
+    statusEl.textContent = 'Capturing frames...';
+    btn.textContent = 'Capturing...';
+
+    const frames = [];
+    for (let i = 0; i <= totalFrames; i++) {
+      drawFrame((i / totalFrames) * T.hold);
+      frames.push(canvas.toDataURL('image/jpeg', 0.92));
+      if (i % 10 === 0) {
+        statusEl.textContent = 'Capturing frames... ' + Math.round(i / totalFrames * 60) + '%';
+        await new Promise(r => setTimeout(r, 0));
+      }
+    }
+
+    statusEl.textContent = 'Encoding MP4...';
+    btn.textContent = 'Encoding...';
+
+    for (let i = 0; i < frames.length; i++) {
+      const base64 = frames[i].split(',')[1];
+      const binary = atob(base64);
+      const bytes = new Uint8Array(binary.length);
+      for (let j = 0; j < binary.length; j++) bytes[j] = binary.charCodeAt(j);
+      ff.FS('writeFile', 'frame' + String(i).padStart(4,'0') + '.jpg', bytes);
+    }
+
+    await ff.run(
+      '-framerate', String(fps),
+      '-i', 'frame%04d.jpg',
+      '-c:v', 'libx264',
+      '-pix_fmt', 'yuv420p',
+      '-preset', 'fast',
+      '-crf', '23',
+      'output.mp4'
+    );
+
+    const data = ff.FS('readFile', 'output.mp4');
+    const blob = new Blob([data.buffer], { type: 'video/mp4' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = (getName().toLowerCase().replace(/\s+/g,'-') || 'will-return') + '.' + ext;
+    a.download = (getName().toLowerCase().replace(/\s+/g,'-') || 'will-return') + '.mp4';
     a.click();
     URL.revokeObjectURL(url);
 
+    for (let i = 0; i < frames.length; i++) {
+      try { ff.FS('unlink', 'frame' + String(i).padStart(4,'0') + '.jpg'); } catch(e) {}
+    }
+    try { ff.FS('unlink', 'output.mp4'); } catch(e) {}
+
     btn.textContent = 'Export MP4';
     btn.disabled = false;
-    statusEl.textContent = 'Download started! (WebM plays on all devices, rename to .mp4 if needed)';
+    statusEl.textContent = 'Downloaded — works on Facebook, Instagram, WhatsApp';
     setTimeout(() => { statusEl.textContent = ''; }, 5000);
-
-    // replay after export
     playAnimation();
-  };
 
-  recorder.start();
-
-  // play animation while recording
-  if (animId) { cancelAnimationFrame(animId); animId = null; }
-  startTime = null;
-
-  function loop(ts) {
-    if (!startTime) startTime = ts;
-    const e = ts - startTime;
-    drawFrame(e);
-    if (e < T.hold) {
-      animId = requestAnimationFrame(loop);
-    } else {
-      drawFrame(T.hold);
-      animId = null;
-      // hold 3 extra frames then stop
-      setTimeout(() => recorder.stop(), 200);
-    }
+  } catch(err) {
+    console.error(err);
+    btn.textContent = 'Export MP4';
+    btn.disabled = false;
+    statusEl.textContent = 'Failed — try again or use Download PNG';
   }
-  animId = requestAnimationFrame(loop);
 }
+
+
 
 function shareCard() {
   const text = `${getName()} ${getPrefix()} ${getMovie()} 🎬 #AvengersDoomsday`;
@@ -362,10 +388,7 @@ function shareCard() {
 // check MediaRecorder support on load
 window.addEventListener('load', () => {
   const note = document.getElementById('compat-note');
-  if (typeof MediaRecorder === 'undefined') {
-    note.textContent = 'Video export not supported in this browser. Use Chrome, Edge, or Firefox for MP4 export.';
-    document.getElementById('mp4-btn').disabled = true;
-  }
+  note.textContent = '';
   setTimeout(playAnimation, 500);
 });
 
